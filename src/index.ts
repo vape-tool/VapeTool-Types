@@ -4,7 +4,7 @@ import {Material} from './material'
 import * as Materials from './material'
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, isCloudyValid} from './cloud'
 
-export default {
+export {
     Coil,
     Wire,
     WireStyle,
