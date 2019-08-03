@@ -1,4 +1,4 @@
-import {Materials, Material} from './index';
+import {Materials, Material, Coil} from './index';
 
 export enum WireType {
     CUSTOM = -1,
@@ -33,18 +33,11 @@ export enum WireKind {
     RIBBON
 }
 
-export interface WiresTree {
-    type: WireType;
-    cores: Wire[];
-    outers: Wire[];
-    pitch: number;
-}
-
-export function isComplex(wire: WiresTree): boolean {
+export function isComplex(wire: Wire | Coil): boolean {
     return wire.cores.length > 0 || wire.outers.length > 0
 }
 
-export class Wire implements WiresTree {
+export class Wire {
     type: WireType;
 
     material: Material;

@@ -1,8 +1,8 @@
-import {Wire, WiresTree, WireType} from './wire';
+import {Wire, WireType} from './wire';
 import uuid from './uuid';
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable} from './cloud';
 
-export default class Coil implements Storeable, WiresTree {
+export default class Coil implements Storeable {
     uid: string;
 
     name: string;
