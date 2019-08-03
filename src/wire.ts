@@ -1,4 +1,4 @@
-import {KANTHAL_A1_AMP, Material} from './material';
+import {Materials, Material} from './index';
 
 export enum WireType {
     CUSTOM = -1,
@@ -40,6 +40,10 @@ export interface WiresTree {
     pitch: number;
 }
 
+export function isComplex(wire: WiresTree): boolean {
+    return wire.cores.length > 0 || wire.outers.length > 0
+}
+
 export class Wire implements WiresTree {
     type: WireType;
 
@@ -77,10 +81,8 @@ export class Wire implements WiresTree {
 
     outers: Wire[];
 
-    isComplex = () => this.cores.length > 0 || this.outers.length > 0;
-
     constructor({
-                    type = WireType.NORMAL, material = KANTHAL_A1_AMP, style = WireStyle.CORE,
+                    type = WireType.NORMAL, material = Materials.KANTHAL_A1_AMP, style = WireStyle.CORE,
                     format = WireFormat.NORMAL, kind = WireKind.ROUND, mm = 0.0, width = 0.0,
                     height = 0.0, pitch = 0.0, space = 0.0, innerDiameter = 0.0, totalLength = 0.0,
                     wrapLength = 0.0, widthDiameter = 0.0, heightDiameter = 0.0, resistance = 0.0,

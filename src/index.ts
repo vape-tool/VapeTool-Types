@@ -1,10 +1,12 @@
 import Coil from './coil'
-import {Wire, WireStyle, WireFormat, WireType, WiresTree, WireKind} from './wire'
+import {Wire, WireStyle, WireFormat, WireType, WiresTree, WireKind, isComplex} from './wire'
 import {Material} from './material'
 import * as Materials from './material'
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, isCloudyValid} from './cloud'
+import * as wireGenerator from './wireGenerator'
 
 export {
+    wireGenerator,
     Coil,
     Wire,
     WireStyle,
@@ -18,5 +20,6 @@ export {
     LOCAL_AUTHOR,
     OnlineStatus,
     Storeable,
-    isCloudyValid
+    isCloudyValid,
+    isComplex
 }
