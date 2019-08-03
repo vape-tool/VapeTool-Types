@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
-    "module": "esnext",
+    "module": "commonjs",
     "target": "esnext",
     "lib": ["esnext"],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
