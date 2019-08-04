@@ -81,7 +81,7 @@ export function claptonWire(core: Wire = normalWire(), outer: Wire = normalWireO
 }
 
 export function parallelWire(core: Wire = normalWire(), strands: number) {
-    const cores = Array(Math.max(2, strands)).map(index => new Wire({...core}));
+    const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
     return new Wire({type: WireType.PARALLEL, cores});
 }
 
@@ -121,7 +121,7 @@ export function normalCoil(): Coil {
 
 
 export function parallelCoil(core: Wire = normalWire(), strands: number = 2): Coil {
-    const cores = Array(Math.max(2, strands)).fill(() => new Wire({...core}));
+    const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
     return new Coil({type: WireType.PARALLEL, cores});
 }
 
@@ -134,7 +134,7 @@ export function twistedCoil(
     core: Wire = normalWire(),
     strands: number = 2,
     pitch: number = 0.0) {
-    const cores = Array(Math.max(2, strands)).fill(() => new Wire({...core}));
+    const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
     if (pitch < cores.length * core.mm) {
         // eslint-disable-next-line no-param-reassign
         pitch = cores.length * core.mm * 1.5;
@@ -171,7 +171,7 @@ export function fusedClaptonCoil(
     strands: number = 2,
     outer: Wire = normalWireOuter(),
 ): Coil {
-    const cores = Array(Math.max(2, strands)).fill(() => new Wire({...core}));
+    const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
     return new Coil({type: WireType.FUSED_CLAPTON, cores, outers: [{...outer}]});
 }
 
@@ -184,7 +184,7 @@ export function alienClaptonCoil(
     strands: number = 2,
     outer: Wire = normalWireOuter(),
 ): Coil {
-    const cores = Array(Math.max(2, strands)).fill(() => new Wire({...core}));
+    const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
     return new Coil({type: WireType.ALIEN_CLAPTON, cores, outers: [{...outer}]});
 }
 
@@ -215,7 +215,7 @@ export function stapleCoil(
     strands: number = 5,
     outer: Wire = normalWireOuter(),
 ): Coil {
-    const cores = Array(Math.max(2, strands)).fill(() => new Wire({...core}));
+    const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
     return new Coil({type: WireType.STAPLE, cores, outers: [{...outer}]});
 }
 
@@ -229,7 +229,7 @@ export function staggeredClaptonCoil(
     strands: number = 1,
     outer: Wire = normalWireOuter(),
 ): Coil {
-    const cores = Array(Math.max(1, strands)).fill(() => new Wire({...core}));
+    const cores = [...new Array(Math.max(1, strands))].map(index => new Wire({...core}));
     return new Coil({
         type: WireType.STAGGERED_CLAPTON,
         cores,
@@ -246,7 +246,7 @@ export function staggeredFusedClaptonCoil(
     strands: number = 2,
     outer: Wire = normalWireOuter(),
 ): Coil {
-    const cores = Array(Math.max(2, strands)).fill(() => staggeredClaptonWire(core, outer));
+    const cores = [...new Array(Math.max(2, strands))].map(index => staggeredClaptonWire(core, outer));
     return new Coil({
         type: WireType.STAGGERED_FUSED_CLAPTON,
         cores,
@@ -264,12 +264,12 @@ export function stapleStaggeredFusedClaptonCoil(
     innerStrands: number = 5,
     outer: Wire = normalWireOuter(),
 ) {
-    const cores = Array(Math.max(2, edgeStrands) - 1).fill(() => {
+    const cores = [...new Array(Math.max(2, edgeStrands) - 1)].flatMap(index => {
         const edge = staggeredClaptonWire(coreEdge, outer);
-        const innerCores = Array(Math.max(1, innerStrands)).fill(() => new Wire({...coreInner}));
+        const innerCores = [...new Array(Math.max(1, innerStrands))].map(_ => new Wire({...coreInner}));
         innerCores.unshift(edge);
         return innerCores
-    }).flat();
+    });
     cores.push(staggeredClaptonWire(coreEdge, outer));
 
     return new Coil({
@@ -291,11 +291,11 @@ export function framedStapleCoil(
     innerStrands: number = 5,
     outer: Wire = normalWireOuter(),
 ) {
-    const cores = Array(Math.max(2, edgeStrands) - 1).fill(() => {
+    const cores = [...new Array(Math.max(2, edgeStrands) - 1)].flatMap(index => {
         const edge = new Wire({...coreEdge});
         const parallelRibbon = parallelWire(coreInner, Math.max(1, innerStrands));
         return [edge, parallelRibbon];
-    }).flat();
+    });
     cores.push(new Wire({...coreEdge}));
 
     return new Coil({
@@ -316,7 +316,7 @@ export function juggernautClaptonCoil(
     claptonOuter: Wire = normalWireOuter(),
     outer: Wire = ribbonWire(),
 ): Coil {
-    const cores = Array(Math.max(1, strands)).map(index => claptonWire(core, claptonOuter));
+    const cores = [...new Array(Math.max(1, strands))].map(index => claptonWire(core, claptonOuter));
     return new Coil({
         type: WireType.JUGGERNAUT,
         cores,
