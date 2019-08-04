@@ -76,6 +76,12 @@ export function ribbonWire(width: number = defaultWidth,
     return new Wire({width, height, material, kind: WireKind.RIBBON})
 }
 
+export function verticalRibbonWire(width: number = defaultHeight,
+                                   height: number = defaultWidth,
+                                   material: Material = defaultMaterial): Wire {
+    return new Wire({width, height, material, kind: WireKind.RIBBON})
+}
+
 export function claptonWire(core: Wire = normalWire(), outer: Wire = normalWireOuter()): Wire {
     return new Wire({type: WireType.CLAPTON, cores: [core], outers: [outer]})
 }
@@ -231,7 +237,7 @@ export function tigerCoil(
  */
 
 export function stapleCoil(
-    core: Wire = ribbonWire(),
+    core: Wire = verticalRibbonWire(),
     strands: number = 5,
     outer: Wire = normalWireOuter(),
 ): Coil {
@@ -280,7 +286,7 @@ export function staggeredFusedClaptonCoil(
 export function stapleStaggeredFusedClaptonCoil(
     coreEdge: Wire = normalWire(),
     edgeStrands: number = 2,
-    coreInner: Wire = ribbonWire(),
+    coreInner: Wire = verticalRibbonWire(),
     innerStrands: number = 5,
     outer: Wire = normalWireOuter(),
 ) {
@@ -307,7 +313,7 @@ export function stapleStaggeredFusedClaptonCoil(
 export function framedStapleCoil(
     coreEdge: Wire = normalWire(),
     edgeStrands: number = 2,
-    coreInner: Wire = ribbonWire(),
+    coreInner: Wire = verticalRibbonWire(),
     innerStrands: number = 5,
     outer: Wire = normalWireOuter(),
 ) {
