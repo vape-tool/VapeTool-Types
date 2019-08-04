@@ -192,7 +192,7 @@ export function fusedClaptonCoil(
     outer: Wire = normalWireOuter(),
 ): Coil {
     const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
-    return new Coil({type: WireType.FUSED_CLAPTON, cores, outers: [{...outer}]});
+    return new Coil({type: WireType.FUSED_CLAPTON, cores, outers: [new Wire({...outer})]});
 }
 
 /**
@@ -205,7 +205,7 @@ export function alienClaptonCoil(
     outer: Wire = normalWireOuter(),
 ): Coil {
     const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
-    return new Coil({type: WireType.ALIEN_CLAPTON, cores, outers: [{...outer}]});
+    return new Coil({type: WireType.ALIEN_CLAPTON, cores, outers: [new Wire({...outer})]});
 }
 
 /**
@@ -236,7 +236,7 @@ export function stapleCoil(
     outer: Wire = normalWireOuter(),
 ): Coil {
     const cores = [...new Array(Math.max(2, strands))].map(index => new Wire({...core}));
-    return new Coil({type: WireType.STAPLE, cores, outers: [{...outer}]});
+    return new Coil({type: WireType.STAPLE, cores, outers: [new Wire({...outer})]});
 }
 
 
@@ -321,7 +321,7 @@ export function framedStapleCoil(
     return new Coil({
         type: WireType.FRAMED_STAPLE,
         cores,
-        outers: [{...outer}],
+        outers: [new Wire({...outer})],
     });
 }
 
