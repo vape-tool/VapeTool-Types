@@ -125,9 +125,9 @@ export function parallelCoil(core: Wire = normalWire(), strands: number = 2): Co
     return new Coil({type: WireType.PARALLEL, cores});
 }
 
-export function parallelCoilFrom(cores: Wire[]): Coil {
-    const newCores = cores.map(core => new Wire({...core}));
-    return new Coil({type: WireType.PARALLEL, cores: newCores});
+export function parallelCoilFrom(wires: Wire[]): Coil {
+    const cores = wires.map(core => new Wire({...core}));
+    return new Coil({type: WireType.PARALLEL, cores});
 }
 
 
@@ -144,6 +144,20 @@ export function twistedCoil(
     if (pitch < cores.length * core.mm) {
         // eslint-disable-next-line no-param-reassign
         pitch = cores.length * core.mm * 1.5;
+    }
+    return new Coil({type: WireType.TWISTED, cores, pitch});
+}
+
+export function twistedCoilFrom(
+    pitch: number = 0.0,
+    wires: Wire[],
+): Coil {
+    const cores = wires.map(wire => new Wire({...wire}));
+    const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.width))
+        .reduce((previousValue, currentValue) => previousValue + currentValue);
+    if (pitch < totalWidth) {
+        // eslint-disable-next-line no-param-reassign
+        pitch = totalWidth * 2;
     }
     return new Coil({type: WireType.TWISTED, cores, pitch});
 }
