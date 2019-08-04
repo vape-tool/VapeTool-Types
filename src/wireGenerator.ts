@@ -153,7 +153,7 @@ export function twistedCoilFrom(
     pitch: number = 0.0,
 ): Coil {
     const cores = wires.map(wire => new Wire({...wire}));
-    const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.width))
+    const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.height))
         .reduce((previousValue, currentValue) => previousValue + currentValue);
     if (pitch < totalWidth) {
         // eslint-disable-next-line no-param-reassign
@@ -217,7 +217,7 @@ export function tigerCoil(
     pitch: number = 0.0,
 ): Coil {
     const cores = wires.map(wire => new Wire({...wire}));
-    const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.width))
+    const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.height))
         .reduce((previousValue, currentValue) => previousValue + currentValue);
     if (pitch < totalWidth) {
         // eslint-disable-next-line no-param-reassign
