@@ -90,7 +90,7 @@ export function staggeredClaptonWire(core: Wire = normalWire(),
     return new Wire({
         type: WireType.STAGGERED_CLAPTON,
         cores: [core],
-        outers: [{...outer, format: WireFormat.STAGGERED}],
+        outers: [new Wire({...outer, format: WireFormat.STAGGERED})],
     })
 }
 
@@ -170,7 +170,7 @@ export function claptonCoil(
     core: Wire = normalWire(),
     outer: Wire = normalWireOuter(),
 ): Coil {
-    return new Coil({type: WireType.CLAPTON, cores: [{...core}], outers: [{...outer}]})
+    return new Coil({type: WireType.CLAPTON, cores: [new Wire({...core})], outers: [new Wire({...outer})]})
 }
 
 
@@ -179,7 +179,7 @@ export function claptonCoil(
  */
 
 export function ribbonCoil(core: Wire = ribbonWire()): Coil {
-    return new Coil({type: WireType.RIBBON, cores: [{...core}]})
+    return new Coil({type: WireType.RIBBON, cores: [new Wire({...core})]})
 }
 
 /**
@@ -253,7 +253,7 @@ export function staggeredClaptonCoil(
     return new Coil({
         type: WireType.STAGGERED_CLAPTON,
         cores,
-        outers: [{...outer, format: WireFormat.STAGGERED}],
+        outers: [new Wire({...outer, format: WireFormat.STAGGERED})],
     });
 }
 
@@ -270,7 +270,7 @@ export function staggeredFusedClaptonCoil(
     return new Coil({
         type: WireType.STAGGERED_FUSED_CLAPTON,
         cores,
-        outers: [{...outer, format: WireFormat.STAGGERED}],
+        outers: [new Wire({...outer, format: WireFormat.STAGGERED})],
     });
 }
 
@@ -295,7 +295,7 @@ export function stapleStaggeredFusedClaptonCoil(
     return new Coil({
         type: WireType.STAPLE_STAGGERED_FUSED_CLAPTON,
         cores,
-        outers: [{...outer, format: WireFormat.STAGGERED}],
+        outers: [new Wire({...outer, format: WireFormat.STAGGERED})],
     });
 }
 
@@ -340,6 +340,6 @@ export function juggernautClaptonCoil(
     return new Coil({
         type: WireType.JUGGERNAUT,
         cores,
-        outers: [{...outer, format: WireFormat.STAGGERED}],
+        outers: [new Wire({...outer, format: WireFormat.STAGGERED})],
     });
 }
