@@ -157,7 +157,7 @@ export function twistedCoilFrom(
         .reduce((previousValue, currentValue) => previousValue + currentValue);
     if (pitch < totalWidth) {
         // eslint-disable-next-line no-param-reassign
-        pitch = totalWidth * 2;
+        pitch = totalWidth * 1.5;
     }
     return new Coil({type: WireType.TWISTED, cores, pitch});
 }
