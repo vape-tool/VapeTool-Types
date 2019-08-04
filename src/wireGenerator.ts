@@ -149,8 +149,8 @@ export function twistedCoil(
 }
 
 export function twistedCoilFrom(
-    pitch: number = 0.0,
     wires: Wire[],
+    pitch: number = 0.0,
 ): Coil {
     const cores = wires.map(wire => new Wire({...wire}));
     const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.width))
@@ -213,8 +213,8 @@ export function alienClaptonCoil(
  */
 
 export function tigerCoil(
-    pitch: number = 0.0,
     wires: Wire[] = [normalWire(), ribbonWire()],
+    pitch: number = 0.0,
 ): Coil {
     const cores = wires.map(wire => new Wire({...wire}));
     const totalWidth = wires.map(wire => (wire.kind === WireKind.ROUND ? wire.mm : wire.width))
