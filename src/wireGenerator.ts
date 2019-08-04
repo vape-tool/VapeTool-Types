@@ -62,7 +62,7 @@ export function normalWire(mm: number = defaultCoreMm, material: Material = defa
     return new Wire({mm, material})
 }
 
-function normalWireOuter(mm: number = defaultOuterMm, material: Material = defaultMaterial): Wire {
+export function normalWireOuter(mm: number = defaultOuterMm, material: Material = defaultMaterial): Wire {
     return new Wire({mm, material, style: WireStyle.OUTER})
 }
 
