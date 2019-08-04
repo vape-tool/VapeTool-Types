@@ -125,6 +125,12 @@ export function parallelCoil(core: Wire = normalWire(), strands: number = 2): Co
     return new Coil({type: WireType.PARALLEL, cores});
 }
 
+export function parallelCoilFrom(cores: Wire[]): Coil {
+    const newCores = cores.map(core => new Wire({...core}));
+    return new Coil({type: WireType.PARALLEL, cores: newCores});
+}
+
+
 /**
  * Twisted
  */
