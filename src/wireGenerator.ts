@@ -30,6 +30,9 @@ export function coilOfType(wireType: WireType): Coil {
         case WireType.FUSED_CLAPTON: {
             return fusedClaptonCoil()
         }
+        case WireType.ALIEN_CLAPTON: {
+            return alienClaptonCoil()
+        }
         case WireType.TIGER: {
             return tigerCoil()
         }
