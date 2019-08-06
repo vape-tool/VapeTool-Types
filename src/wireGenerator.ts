@@ -62,7 +62,7 @@ export function coilOfType(wireType: WireType): Coil {
  */
 
 export function normalWire(mm: number = defaultCoreMm, material: Material = defaultMaterial): Wire {
-    return new Wire({mm, material})
+    return new Wire({mm, material, width: defaultWidth, height: defaultHeight})
 }
 
 export function normalWireOuter(mm: number = defaultOuterMm, material: Material = defaultMaterial): Wire {
@@ -76,7 +76,7 @@ export function customWire(): Wire {
 export function ribbonWire(width: number = defaultWidth,
                            height: number = defaultHeight,
                            material: Material = defaultMaterial): Wire {
-    return new Wire({width, height, material, kind: WireKind.RIBBON})
+    return new Wire({width, height, material, kind: WireKind.RIBBON, mm: defaultCoreMm})
 }
 
 export function verticalRibbonWire(width: number = defaultHeight,
