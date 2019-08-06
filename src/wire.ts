@@ -39,8 +39,6 @@ export function isComplex(wire: Wire | Coil): boolean {
 }
 
 export class Wire {
-    uid: string;
-
     type: WireType;
 
     material: Material;
@@ -82,14 +80,13 @@ export class Wire {
                     format = WireFormat.NORMAL, kind = WireKind.ROUND, mm = 0.0, width = 0.0,
                     height = 0.0, pitch = 0.0, space = 0.0, innerDiameter = 0.0, totalLength = 0.0,
                     wrapLength = 0.0, widthDiameter = 0.0, heightDiameter = 0.0, resistance = 0.0,
-                    cores = [], outers = [], uid = uuid(),
+                    cores = [], outers = []
                 }: {
         type?: WireType, material?: Material, style?: WireStyle, format?: WireFormat,
         kind?: WireKind, mm?: number, width?: number, height?: number, pitch?: number, space?: number,
         innerDiameter?: number, totalLength?: number, wrapLength?: number, widthDiameter?: number,
         heightDiameter?: number, resistance?: number, cores?: Wire[], outers?: Wire[], uid?: string
     } = {}) {
-        this.uid = uid;
         this.type = type;
         this.material = material;
         this.style = style;
