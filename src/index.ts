@@ -4,6 +4,7 @@ import {Material} from './material'
 import * as Materials from './material'
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, isCloudyValid} from './cloud'
 import * as wireGenerator from './wireGenerator'
+import {User, Ban, UserPermission} from './user';
 
 export {
     wireGenerator,
@@ -20,5 +21,8 @@ export {
     OnlineStatus,
     Storeable,
     isCloudyValid,
-    isComplex
+    isComplex,
+    User,
+    Ban,
+    UserPermission
 }
