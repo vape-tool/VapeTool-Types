@@ -5,6 +5,7 @@ import * as Materials from './material'
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, isCloudyValid} from './cloud'
 import * as wireGenerator from './wireGenerator'
 import {User, Ban, UserPermission} from './user';
+import { OnlineContentStatus, Photo } from './photo';
 
 export {
     wireGenerator,
@@ -24,5 +25,7 @@ export {
     isComplex,
     User,
     Ban,
-    UserPermission
+    UserPermission,
+    Photo,
+    OnlineContentStatus,
 }
