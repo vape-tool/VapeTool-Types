@@ -1,50 +1,31 @@
-import {Wire, WireType} from './wire';
 import uuid from './uuid';
-import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable} from './cloud';
+import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, Wire, WireType} from './index';
 
 export default class Coil implements Storeable {
     uid: string;
-
     name: string;
-
     description: string;
-
     author: Author;
-
     creationTime: number;
-
     lastTimeModified: number;
-
     status: OnlineStatus;
-
     type: WireType;
-
     setup: number;
-
     wraps: number;
-
     resistance: number;
-
     legsLength: number;
-
     innerDiameter: number;
-
     pitch: number;
-
     heightDiameter: number;
-
     widthDiameter: number;
-
     totalLength: number;
-
     cores: Wire[];
-
     outers: Wire[];
 
     constructor({
                     uid = uuid(), name = '', description = '', author = LOCAL_AUTHOR,
                     creationTime = Date.now(), lastTimeModified = Date.now(),
-                    status = OnlineStatus.ONLINE_PUBLIC, type = WireType.NORMAL,
+                    status = OnlineStatus.ONLINE_PRIVATE, type = WireType.NORMAL,
                     setup = 1, wraps = 5.0, resistance = 0.554,
                     legsLength = 15.0, innerDiameter = 3.0, pitch = 0.0,
                     heightDiameter = 0.0, widthDiameter = 0.0, totalLength = 0.0,

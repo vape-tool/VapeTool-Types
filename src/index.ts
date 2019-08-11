@@ -6,6 +6,8 @@ import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, isCloudyValid} from './cl
 import * as wireGenerator from './wireGenerator'
 import {User, Ban, UserPermission} from './user';
 import { OnlineContentStatus, Photo } from './photo';
+import Flavor from './flavor';
+import { Liquid, Result } from './liquid';
 
 export {
     wireGenerator,
@@ -28,4 +30,7 @@ export {
     UserPermission,
     Photo,
     OnlineContentStatus,
+    Flavor,
+    Liquid,
+    Result
 }
