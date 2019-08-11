@@ -22,7 +22,7 @@ export class Liquid implements Storeable {
     constructor({
                     uid = uuid(), author = LOCAL_AUTHOR, creationTime = Date.now(), lastTimeModified = Date.now(),
                     status = OnlineStatus.ONLINE_PRIVATE, name = '', description = '', baseStrength = 36,
-                    baseRatio = 50, thinner = 0, targetStrength = 6, targetRatio = 0, amount = 10, rating = 50,
+                    baseRatio = 50, thinner = 0, targetStrength = 6, targetRatio = 50, amount = 10, rating = 50,
                     flavors = []
                 }: {
         uid?: string, author?: Author, creationTime?: number, lastTimeModified?: number,

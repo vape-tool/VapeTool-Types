@@ -17,8 +17,8 @@ export default class Flavor implements Storeable {
     constructor(
         {
             uid = uuid(), author = LOCAL_AUTHOR, creationTime = Date.now(), lastTimeModified = Date.now(),
-            status = OnlineStatus.ONLINE_PRIVATE, name = '', manufacturer = '', percentage = 0, ratio = 0,
-            price = 0, amount = 0
+            status = OnlineStatus.ONLINE_PRIVATE, name = '', manufacturer = '', percentage = 8, ratio = 100,
+            price = 0, amount = 10
         }: {
             uid?: string, author?: Author, creationTime?: number, lastTimeModified?: number,
             status?: OnlineStatus, name?: string, manufacturer?: string, percentage?: number, ratio?: number,
