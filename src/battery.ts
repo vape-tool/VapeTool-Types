@@ -22,3 +22,7 @@ export class Battery {
         this.reviewUrl = reviewUrl;
     }
 }
+
+export function id(battery: Battery): string {
+    return `${battery.brand}-${battery.model}-${battery.size}-${battery.capacity}-${battery.stableCurrent}`
+}

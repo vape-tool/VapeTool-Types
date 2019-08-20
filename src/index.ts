@@ -8,7 +8,7 @@ import {User, Ban, UserPermission} from './user';
 import {OnlineContentStatus, Photo} from './photo';
 import Flavor from './flavor';
 import {Liquid, Result} from './liquid';
-import {Battery} from "./battery";
+import {Battery, id} from "./battery";
 
 export {
     wireGenerator,
@@ -35,4 +35,5 @@ export {
     Liquid,
     Result,
     Battery,
+    id
 }
