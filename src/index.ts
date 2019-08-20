@@ -5,9 +5,10 @@ import * as Materials from './material'
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable, isCloudyValid} from './cloud'
 import * as wireGenerator from './wireGenerator'
 import {User, Ban, UserPermission} from './user';
-import { OnlineContentStatus, Photo } from './photo';
+import {OnlineContentStatus, Photo} from './photo';
 import Flavor from './flavor';
-import { Liquid, Result } from './liquid';
+import {Liquid, Result} from './liquid';
+import {Battery} from "./battery";
 
 export {
     wireGenerator,
@@ -32,5 +33,6 @@ export {
     OnlineContentStatus,
     Flavor,
     Liquid,
-    Result
+    Result,
+    Battery,
 }
