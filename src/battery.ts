@@ -24,5 +24,5 @@ export class Battery {
 }
 
 export function id(battery: Battery): string {
-    return `${battery.brand}-${battery.model}-${battery.size}-${battery.capacity}`
+    return `${battery.brand}-${battery.model}-${battery.size}-${battery.capacity}`.replace(' ', '_')
 }
