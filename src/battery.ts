@@ -2,6 +2,7 @@ export class Battery {
     brand: string;
     model: string;
     size: string;
+    chemistry: string;
     capacity: number;
     voltage: number;
     stableCurrent: number;
@@ -9,11 +10,12 @@ export class Battery {
     cutOff: number;
     reviewUrl: string;
 
-    constructor(brand: string, model: string, size: string, capacity: number, voltage: number, stableCurrent: number,
+    constructor(brand: string, model: string, size: string, chemistry: string, capacity: number, voltage: number, stableCurrent: number,
                 maxVapeCurrent: number, cutOff: number, reviewUrl: string) {
         this.brand = brand;
         this.model = model;
         this.size = size;
+        this.chemistry = chemistry;
         this.capacity = capacity;
         this.voltage = voltage;
         this.stableCurrent = stableCurrent;
@@ -24,5 +26,5 @@ export class Battery {
 }
 
 export function id(battery: Battery): string {
-    return `${battery.brand}-${battery.model}-${battery.size}-${battery.capacity}`.replace(' ', '_')
+    return `${battery.brand}-${battery.model}-${battery.chemistry}-${battery.size}-${battery.capacity}`.replace(new RegExp('[^A-Za-z0-9_]+'), '_')
 }
