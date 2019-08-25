@@ -56,9 +56,7 @@ export class Result {
     price: number;
     weight: number;
 
-    constructor({name = '', percentage = 0, ml = 0, drips = 0, price = 0, weight = 0}: {
-        name?: string, percentage?: number, ml?: number, drips?: number, price?: number, weight?: number
-    } = {}) {
+    constructor(name: string, percentage: number, ml: number, drips: number, price: number, weight: number) {
         this.name = name;
         this.percentage = percentage;
         this.ml = ml;
