@@ -9,6 +9,7 @@ import {OnlineContentStatus, Photo} from './photo';
 import Flavor from './flavor';
 import {Liquid, Result} from './liquid';
 import {Battery, id} from "./battery";
+import Comment from './comment';
 
 export {
     wireGenerator,
@@ -35,5 +36,6 @@ export {
     Liquid,
     Result,
     Battery,
-    id
+    id,
+    Comment
 }
