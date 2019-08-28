@@ -6,14 +6,14 @@ export class Battery {
     capacity: number;
     voltage: number;
     stableCurrent: number;
-    maxVapeCurrent: number;
+    maxVapingCurrent: number;
     cutOff: number;
     reviewUrl: string;
     imageWidth: number;
     imageHeight: number;
 
     constructor(brand: string, model: string, size: string, chemistry: string, capacity: number, voltage: number, stableCurrent: number,
-                maxVapeCurrent: number, cutOff: number, reviewUrl: string, imageWidth: number, imageHeight: number) {
+                maxVapingCurrent: number, cutOff: number, reviewUrl: string, imageWidth: number, imageHeight: number) {
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -21,7 +21,7 @@ export class Battery {
         this.capacity = capacity;
         this.voltage = voltage;
         this.stableCurrent = stableCurrent;
-        this.maxVapeCurrent = maxVapeCurrent;
+        this.maxVapingCurrent = maxVapingCurrent;
         this.cutOff = cutOff;
         this.reviewUrl = reviewUrl;
         this.imageWidth = imageWidth;
