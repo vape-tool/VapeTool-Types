@@ -30,5 +30,5 @@ export class Battery {
 }
 
 export function id(battery: Battery): string {
-    return `${battery.brand}-${battery.model}-${battery.chemistry}-${battery.size}-${battery.capacity}`.replace(new RegExp('[^A-Za-z0-9_]+'), '_')
+    return `${battery.brand}_${battery.model}_${battery.chemistry}_${battery.size}_${battery.capacity}`.replace(new RegExp('[^A-Za-z0-9_]+'), '_')
 }
