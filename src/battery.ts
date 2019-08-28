@@ -11,9 +11,10 @@ export class Battery {
     reviewUrl: string;
     imageWidth: number;
     imageHeight: number;
+    affiliate?: Map<string, string>; // Provider name -> link
 
     constructor(brand: string, model: string, size: string, chemistry: string, capacity: number, voltage: number, stableCurrent: number,
-                maxVapingCurrent: number, cutOff: number, reviewUrl: string, imageWidth: number, imageHeight: number) {
+                maxVapingCurrent: number, cutOff: number, reviewUrl: string, imageWidth: number, imageHeight: number, affiliate?: Map<string, string>) {
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -26,6 +27,7 @@ export class Battery {
         this.reviewUrl = reviewUrl;
         this.imageWidth = imageWidth;
         this.imageHeight = imageHeight;
+        this.affiliate = affiliate;
     }
 }
 
