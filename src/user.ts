@@ -5,16 +5,18 @@ export class User {
     permission: UserPermission;
     pro: boolean;
     setup: boolean;
-    ban?: Ban;
+    ban: Ban | null;
+    subscription: Date | null;
 
-    constructor(uid: string, display_name: string, email: string, permission: UserPermission, pro: boolean, setup: boolean, ban?: Ban) {
-        this.uid = uid;
-        this.display_name = display_name;
-        this.email = email;
-        this.permission = permission;
-        this.pro = pro;
-        this.setup = setup;
-        this.ban = ban;
+    constructor(uid: string, display_name: string, email: string, permission: UserPermission, pro: boolean, setup: boolean, ban: Ban | null, subscription: Date | null) {
+      this.uid = uid;
+      this.display_name = display_name;
+      this.email = email;
+      this.permission = permission;
+      this.pro = pro;
+      this.setup = setup;
+      this.ban = ban;
+      this.subscription = subscription;
     }
 }
 
