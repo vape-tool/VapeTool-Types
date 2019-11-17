@@ -99,6 +99,9 @@ export class Properties {
   surface: number;
   sweetSpotLow: number;
   sweetSpotHigh: number;
+  totalLength: number;
+  totalWidth: number;
+  totalHeight: number;
 
   constructor(
     current: number,
@@ -106,7 +109,10 @@ export class Properties {
     heat: number,
     surface: number,
     sweetSpotLow: number,
-    sweetSpotHigh: number
+    sweetSpotHigh: number,
+    totalLength: number,
+    totalWidth: number,
+    totalHeight: number
   ) {
     this.current = current;
     this.power = power;
@@ -114,5 +120,8 @@ export class Properties {
     this.surface = surface;
     this.sweetSpotLow = sweetSpotLow;
     this.sweetSpotHigh = sweetSpotHigh;
+    this.totalLength = totalLength;
+    this.totalHeight = totalHeight;
+    this.totalWidth = totalWidth;
   }
 }
