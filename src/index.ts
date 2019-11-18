@@ -23,6 +23,7 @@ import Flavor from "./flavor";
 import { Liquid, Result } from "./liquid";
 import { Battery, id } from "./battery";
 import Comment from "./comment";
+import { Post } from "./post";
 
 export {
   wireGenerator,
@@ -51,5 +52,6 @@ export {
   Result,
   Battery,
   id,
-  Comment
+  Comment,
+  Post
 };
