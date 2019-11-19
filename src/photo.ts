@@ -1,19 +1,17 @@
 import { Author } from "./cloud";
 
-export class Photo {
-  constructor(
+export interface Photo {
     readonly uid: string,
     readonly author: Author,
     readonly description: string,
     readonly status: OnlineContentStatus,
     readonly timestamp: any,
-    readonly width: number,
-    readonly height: number,
-    readonly linkedCoilUid: string,
-    readonly reports: number,
+    readonly width?: number,
+    readonly height?: number,
+    readonly linkedCoilUid?: string,
+    readonly reports?: number,
     readonly lastTimeModified: number,
     readonly creationTime: number
-  ) {}
 }
 
 export enum OnlineContentStatus {
