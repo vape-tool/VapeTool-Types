@@ -7,11 +7,11 @@ export class Photo implements Storeable {
     readonly description: string,
     readonly status: OnlineStatus,
     readonly timestamp: any,
-    readonly lastTimeModified: number,
-    readonly creationTime: number,
+    readonly lastTimeModified: number | Object,
+    readonly creationTime: number | Object,
     readonly width: number | null,
     readonly height: number | null,
     readonly linkedCoilUid: string | null,
-    readonly reports: number | null,
-  ){}
+    readonly reports: number | null
+  ) {}
 }

@@ -7,9 +7,9 @@ export class Link implements Storeable {
     readonly title: string,
     readonly url: string,
     readonly author: Author,
-    readonly creationTime: number,
-    readonly lastTimeModified: number,
+    readonly creationTime: number | Object,
+    readonly lastTimeModified: number | Object,
     readonly status: OnlineStatus,
-    readonly reports: number | null,
+    readonly reports?: number
   ) {}
 }

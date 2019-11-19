@@ -18,8 +18,8 @@ export enum OnlineStatus {
 export interface Storeable {
   uid: string;
   author: Author;
-  creationTime: number; // millis
-  lastTimeModified: number; // millis
+  creationTime: number | Object; // millis or ServerVariable.TIMESTAMP
+  lastTimeModified: number | Object; // millis or ServerVariable.TIMESTAMP
   status: OnlineStatus;
 }
 
