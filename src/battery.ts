@@ -12,7 +12,7 @@ export class Battery {
     readonly reviewUrl: string,
     readonly imageWidth: number,
     readonly imageHeight: number,
-    readonly affiliate?: Map<string, string> // Provider name -> link
+    readonly affiliate: Map<string, string> | null // Provider name -> link
   ) {}
 }
 

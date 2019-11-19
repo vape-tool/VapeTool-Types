@@ -18,12 +18,13 @@ import {
 } from "./cloud";
 import * as wireGenerator from "./wireGenerator";
 import { User, Ban, UserPermission } from "./user";
-import { OnlineContentStatus, Photo } from "./photo";
+import { Photo } from "./photo";
 import Flavor from "./flavor";
 import { Liquid, Result } from "./liquid";
 import { Battery, id } from "./battery";
 import Comment from "./comment";
 import { Post } from "./post";
+import { Link } from "./link";
 
 export {
   wireGenerator,
@@ -46,12 +47,12 @@ export {
   Ban,
   UserPermission,
   Photo,
-  OnlineContentStatus,
   Flavor,
   Liquid,
   Result,
   Battery,
   id,
   Comment,
-  Post
+  Post,
+  Link
 };
