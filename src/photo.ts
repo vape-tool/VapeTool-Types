@@ -9,9 +9,9 @@ export class Photo implements Storeable {
     readonly timestamp: any,
     readonly lastTimeModified: number | Object,
     readonly creationTime: number | Object,
-    readonly width: number | null,
-    readonly height: number | null,
-    readonly linkedCoilUid: string | null,
-    readonly reports: number | null
+    readonly width?: number,
+    readonly height?: number,
+    readonly linkedCoilUid?: string,
+    readonly reports?: number
   ) {}
 }
