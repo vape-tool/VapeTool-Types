@@ -1,37 +1,23 @@
-import {Author} from "./cloud";
+import { Author } from "./cloud";
 
 export class Photo {
-    uid: string;
-    author: Author;
-    description: string;
-    status: OnlineContentStatus;
-    timestamp: any;
-    width: number;
-    height: number;
-    linkedCoilUid?: string;
-    reports: number;
-    lastTimeModified: number;
-    creationTime: number;
-
-    constructor(uid: string, author: Author, description: string, status: OnlineContentStatus,
-                timestamp: any, width: number, height: number, linkedCoilUid: string, reports: number,
-                lastTimeModified: number, creationTime: number) {
-        this.uid = uid;
-        this.author = author;
-        this.description = description;
-        this.status = status;
-        this.timestamp = timestamp;
-        this.width = width;
-        this.height = height;
-        this.linkedCoilUid = linkedCoilUid;
-        this.reports = reports;
-        this.lastTimeModified = lastTimeModified;
-        this.creationTime = creationTime;
-    }
+  constructor(
+    readonly uid: string,
+    readonly author: Author,
+    readonly description: string,
+    readonly status: OnlineContentStatus,
+    readonly timestamp: any,
+    readonly width: number,
+    readonly height: number,
+    readonly linkedCoilUid: string,
+    readonly reports: number,
+    readonly lastTimeModified: number,
+    readonly creationTime: number
+  ) {}
 }
 
 export enum OnlineContentStatus {
-    ONLINE_PRIVATE = 0,
-    ONLINE_PENDING = 5,
-    ONLINE_PUBLIC = 10,
+  ONLINE_PRIVATE = 0,
+  ONLINE_PENDING = 5,
+  ONLINE_PUBLIC = 10
 }
