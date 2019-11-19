@@ -9,5 +9,5 @@ export class Post {
     readonly creationTime: number,
     readonly lastTimeModified: number,
     readonly status: OnlineStatus
-  ) { }
+  ) {}
 }
