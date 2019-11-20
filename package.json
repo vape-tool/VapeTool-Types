@@ -1,6 +1,6 @@
 {
   "name": "@vapetool/types",
-  "version": "1.4.23",
+  "version": "1.4.24",
   "description": "VapeTool types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
