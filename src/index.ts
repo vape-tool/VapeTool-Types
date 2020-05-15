@@ -25,6 +25,7 @@ import { Battery, id } from "./battery";
 import Comment from "./comment";
 import { Post } from "./post";
 import { Link } from "./link";
+import Mixable, { MixableType } from './mixable'
 
 export {
   wireGenerator,
@@ -54,5 +55,7 @@ export {
   id,
   Comment,
   Post,
-  Link
+  Link,
+  Mixable, 
+  MixableType
 };
