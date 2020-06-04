@@ -34,7 +34,7 @@ export class Liquid implements Storeable {
     targetRatio = 50,
     amount = 10,
     rating = 50,
-    flavors = [],
+    flavors = []
   }: {
     uid?: string;
     author?: Author;
@@ -74,7 +74,7 @@ export class Result {
   constructor(
     readonly name: string,
     readonly percentage: number,
-    readonly amount: number,
+    readonly ml: number,
     readonly drips: number,
     readonly price: number,
     readonly weight: number
