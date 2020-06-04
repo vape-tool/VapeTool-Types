@@ -10,7 +10,12 @@ export default class Mixable {
 
 export interface MixResult {
     results: Result[]
+    type: MixableType,
+    percentage: number,
     amount: number;
     ratio: number;
+    price: number,
+    weight: number,
+    drips: number,
     strength: number;
 }
