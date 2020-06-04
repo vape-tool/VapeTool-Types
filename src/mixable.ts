@@ -19,12 +19,7 @@ export class MixableResult {
 }
 
 export interface MixResult {
-    results: MixableResult[]
-    percentage: number,
-    amount: number;
+    results: MixableResult[];
     ratio: number;
-    price: number,
-    weight: number,
-    drips: number,
     strength: number;
 }
