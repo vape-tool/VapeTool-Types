@@ -1,5 +1,3 @@
-import { Result } from "./liquid";
-
 export enum MixableType {
     BASE, PREMIX, LIQUID
 }
@@ -8,9 +6,20 @@ export default class Mixable {
     }
 }
 
+export class MixableResult {
+  constructor(
+    readonly name: string,
+    readonly type: MixableType,
+    readonly percentage: number,
+    readonly amount: number,
+    readonly drips: number,
+    readonly price: number,
+    readonly weight: number
+  ) {}
+}
+
 export interface MixResult {
-    results: Result[]
-    type: MixableType,
+    results: MixableResult[]
     percentage: number,
     amount: number;
     ratio: number;
