@@ -59,4 +59,5 @@ export {
   Mixable, 
   MixableType,
   MixResult,
+  MixableResult,
 };
