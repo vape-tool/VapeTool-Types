@@ -1,9 +1,13 @@
 export enum MixableType {
-    BASE, PREMIX, LIQUID
+  BASE, PREMIX, LIQUID
 }
-export default class Mixable {
-    constructor(readonly type: MixableType, readonly amount: number, readonly strength: number, readonly ratio: number, readonly thinner: number) {
-    }
+export interface Mixable {
+  type: MixableType,
+  amount: number,
+  strength: number,
+  ratio: number,
+  thinner: number,
+  flavorsPercentage: number
 }
 
 export class MixableResult {
@@ -15,11 +19,11 @@ export class MixableResult {
     readonly drops: number,
     readonly price: number,
     readonly weight: number
-  ) {}
+  ) { }
 }
 
 export interface MixResult {
-    results: MixableResult[];
-    ratio: number;
-    strength: number;
+  results: MixableResult[];
+  ratio: number;
+  strength: number;
 }
