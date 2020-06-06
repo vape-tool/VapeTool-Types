@@ -12,7 +12,7 @@ export class MixableResult {
     readonly type: MixableType,
     readonly percentage: number,
     readonly amount: number,
-    readonly drips: number,
+    readonly drops: number,
     readonly price: number,
     readonly weight: number
   ) {}
