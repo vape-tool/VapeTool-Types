@@ -13,8 +13,8 @@ export class Coil implements Storeable {
   name: string;
   description: string;
   author: Author;
-  creationTime: number;
-  lastTimeModified: number;
+  creationTime: number | object;
+  lastTimeModified: number | object;
   status: OnlineStatus;
   type: WireType;
   setup: number;

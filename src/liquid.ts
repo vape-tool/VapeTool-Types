@@ -4,10 +4,9 @@ import uuid from "./uuid";
 export class Liquid implements Storeable {
   uid: string;
   author: Author;
-  creationTime: number | Object;
-  lastTimeModified: number | Object;
+  creationTime: number | object;
+  lastTimeModified: number | object;
   status: OnlineStatus;
-
   name: string;
   description: string;
   baseStrength: number;
@@ -38,8 +37,8 @@ export class Liquid implements Storeable {
   }: {
     uid?: string;
     author?: Author;
-    creationTime?: number | Object;
-    lastTimeModified?: number | Object;
+    creationTime?: number | object;
+    lastTimeModified?: number | object;
     status?: OnlineStatus;
     name?: string;
     description?: string;
