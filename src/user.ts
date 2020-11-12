@@ -7,7 +7,8 @@ export class User {
     readonly pro: boolean,
     readonly setup: boolean,
     readonly ban: Ban | null,
-    readonly subscription: Date | null
+    readonly subscription: Date | null,
+    readonly stripeId: string | null
   ) {}
 }
 
