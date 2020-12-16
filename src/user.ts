@@ -9,7 +9,8 @@ export class User {
     readonly ban: Ban | null,
     readonly subscription: Date | null,
     readonly stripeId: string | null,
-    readonly paypalSubscriptionId: string | null
+    readonly paypalSubscriptionId: string | null,
+    readonly webPro: boolean
   ) {}
 }
 
@@ -22,5 +23,5 @@ export enum UserPermission {
   ONLINE_USER = 0,
   ONLINE_PRO_BUILDER = 3,
   ONLINE_MODERATOR = 5,
-  ONLINE_ADMIN = 10
+  ONLINE_ADMIN = 10,
 }
