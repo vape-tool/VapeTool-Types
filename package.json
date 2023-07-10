@@ -1,6 +1,6 @@
 {
   "name": "@vapetool/types",
-  "version": "1.4.37",
+  "version": "1.4.5",
   "description": "VapeTool types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,6 +24,5 @@
   "homepage": "https://github.com/vape-tool/VapeTool-Types#readme",
   "devDependencies": {
     "typescript": "^3.5.3"
-  },
-  "dependencies": {}
+  }
 }

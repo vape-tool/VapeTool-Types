@@ -7,10 +7,10 @@ export class User {
     readonly pro: boolean,
     readonly setup: boolean,
     readonly ban: Ban | null,
-    readonly subscription: Date | null,
-    readonly stripeId: string | null,
-    readonly paypalSubscriptionId: string | null,
-    readonly webPro: boolean
+
+    // Web only
+    readonly webPro: boolean,
+    readonly stripeSubscription: Date | null
   ) {}
 }
 
