@@ -10,7 +10,8 @@ export class User {
 
     // Web only
     readonly webPro: boolean,
-    readonly stripeSubscription: Date | null
+    readonly stripeSubscription: Date | null,
+    readonly stripeCancelAtEndPeriod: boolean | null
   ) {}
 }
 
