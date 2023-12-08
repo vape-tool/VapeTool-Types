@@ -1,6 +1,6 @@
 {
   "name": "@vapetool/types",
-  "version": "1.4.6",
+  "version": "1.4.8",
   "description": "VapeTool types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/vape-tool/VapeTool-Types.git"
   },
-  "author": "Stanislaw Baranski <stachu@stasbar.com> (https://stasbar.com)",
+  "author": "Stanislaw Baranski <stan@stan.bar> (https://stan.bar)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vape-tool/VapeTool-Types/issues"
