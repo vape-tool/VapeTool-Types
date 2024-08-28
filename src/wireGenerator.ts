@@ -79,6 +79,12 @@ export function ribbonWire(width: number = defaultWidth,
     return new Wire({width, height, material, kind: WireKind.RIBBON, mm: defaultCoreMm})
 }
 
+export function ribbonWireOuter(width: number = defaultWidth,
+    height: number = defaultHeight,
+    material: Material = defaultMaterial): Wire {
+return new Wire({width, height, material, kind: WireKind.RIBBON, mm: defaultCoreMm, style: WireStyle.OUTER})
+}
+
 export function verticalRibbonWire(width: number = defaultHeight,
                                    height: number = defaultWidth,
                                    material: Material = defaultMaterial): Wire {
@@ -343,7 +349,7 @@ export function juggernautClaptonCoil(
     core: Wire = normalWire(),
     strands: number = 1,
     claptonOuter: Wire = normalWireOuter(),
-    outer: Wire = ribbonWire(),
+    outer: Wire = ribbonWireOuter(),
 ): Coil {
     const cores = [...new Array(Math.max(1, strands))].map(index => claptonWire(core, claptonOuter));
     return new Coil({
