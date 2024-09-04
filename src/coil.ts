@@ -8,7 +8,7 @@ import {
   WireType
 } from "./index";
 
-export class Coil implements Storeable {
+export interface DatabaseCoil extends Storeable {
   uid: string;
   name: string;
   description: string;
@@ -28,14 +28,37 @@ export class Coil implements Storeable {
   totalLength: number;
   cores: Wire[];
   outers: Wire[];
+}
+
+
+export class Coil {
+  id: string;
+  name: string;
+  description: string;
+  createdBy: string;
+  createdAt: object;
+  updatedAt: object | null;
+  status: OnlineStatus;
+  type: WireType;
+  setup: number;
+  wraps: number;
+  resistance: number;
+  legsLength: number;
+  innerDiameter: number;
+  pitch: number;
+  heightDiameter: number;
+  widthDiameter: number;
+  totalLength: number;
+  cores: Wire[];
+  outers: Wire[];
 
   constructor({
-    uid = uuid(),
+    id = uuid(),
     name = "",
     description = "",
-    author = LOCAL_AUTHOR,
-    creationTime = Date.now(),
-    lastTimeModified = Date.now(),
+    createdBy = LOCAL_AUTHOR.uid,
+    createdAt = new Date(),
+    updatedAt = null,
     status = OnlineStatus.ONLINE_PRIVATE,
     type = WireType.NORMAL,
     setup = 1,
@@ -50,12 +73,14 @@ export class Coil implements Storeable {
     cores = [],
     outers = []
   }: {
-    uid?: string;
+    id?: string;
     name?: string;
     description?: string;
-    author?: Author;
-    creationTime?: number;
-    lastTimeModified?: number;
+
+    createdBy?: string;
+    createdAt?: object;
+    updatedAt?: object | null;
+
     status?: OnlineStatus;
     type?: WireType;
     setup?: number;
@@ -70,6 +95,7 @@ export class Coil implements Storeable {
     cores?: Wire[];
     outers?: Wire[];
   } = {}) {
+    this.id = id;
     this.setup = setup;
     this.name = name;
     this.description = description;
@@ -77,11 +103,10 @@ export class Coil implements Storeable {
     this.resistance = resistance;
     this.legsLength = legsLength;
     this.type = type;
-    this.author = author;
-    this.creationTime = creationTime;
-    this.lastTimeModified = lastTimeModified;
+    this.createdBy = createdBy;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
     this.status = status;
-    this.uid = uid;
     this.cores = cores;
     this.outers = outers;
     this.innerDiameter = innerDiameter;

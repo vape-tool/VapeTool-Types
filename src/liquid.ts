@@ -1,7 +1,7 @@
 import { Author, Flavor, LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
 import uuid from "./uuid";
 
-export class Liquid implements Storeable {
+export interface DatabaseLiquid extends Storeable {
   uid: string;
   author: Author;
   creationTime: number | object;
@@ -17,15 +17,37 @@ export class Liquid implements Storeable {
   amount: number;
   rating: number;
   flavors: Flavor[];
+}
+
+export class Liquid {
+  id: string;
+  name: string;
+  description: string;
+
+  createdBy: string;
+  createdAt: object;
+  updatedAt: object | null;
+
+  status: OnlineStatus;
+
+  baseStrength: number;
+  baseRatio: number; //PG ratio
+  thinner: number;
+  targetStrength: number;
+  targetRatio: number;
+  amount: number;
+  rating: number;
+  flavors: Flavor[];
 
   constructor({
-    uid = uuid(),
-    author = LOCAL_AUTHOR,
-    creationTime = Date.now(),
-    lastTimeModified = Date.now(),
-    status = OnlineStatus.ONLINE_PRIVATE,
+    id = uuid(),
     name = "",
     description = "",
+    createdBy = LOCAL_AUTHOR.uid,
+    createdAt = new Date(),
+    updatedAt = null,
+    status = OnlineStatus.ONLINE_PRIVATE,
+
     baseStrength = 36,
     baseRatio = 50,
     thinner = 0,
@@ -35,15 +57,18 @@ export class Liquid implements Storeable {
     rating = 50,
     flavors = []
   }: {
-    uid?: string;
-    author?: Author;
-    creationTime?: number | object;
-    lastTimeModified?: number | object;
-    status?: OnlineStatus;
+    id?: string;
     name?: string;
     description?: string;
+
+    createdBy?: string;
+    createdAt?: object;
+    updatedAt?: object | null;
+
+    status?: OnlineStatus;
+
     baseStrength?: number;
-    baseRatio?: number;
+    baseRatio?: number; //PG ratio
     thinner?: number;
     targetStrength?: number;
     targetRatio?: number;
@@ -51,13 +76,15 @@ export class Liquid implements Storeable {
     rating?: number;
     flavors?: Flavor[];
   } = {}) {
-    this.uid = uid;
-    this.author = author;
-    this.creationTime = creationTime;
-    this.lastTimeModified = lastTimeModified;
-    this.status = status;
+    this.id = id;
     this.name = name;
     this.description = description;
+
+    this.createdAt = createdAt;
+    this.createdBy = createdBy;
+    this.updatedAt = updatedAt;
+
+    this.status = status;
     this.baseStrength = baseStrength;
     this.baseRatio = baseRatio;
     this.thinner = thinner;
@@ -77,5 +104,5 @@ export class Result {
     readonly drips: number,
     readonly price: number,
     readonly weight: number
-  ) {}
+  ) { }
 }

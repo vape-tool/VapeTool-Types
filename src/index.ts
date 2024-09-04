@@ -1,4 +1,4 @@
-import { Coil, Properties } from "./coil";
+import { Coil, Properties, DatabaseCoil } from "./coil";
 import {
   Wire,
   WireStyle,
@@ -19,8 +19,8 @@ import {
 import * as wireGenerator from "./wireGenerator";
 import { User, Ban, UserPermission } from "./user";
 import { Photo } from "./photo";
-import Flavor from "./flavor";
-import { Liquid, Result } from "./liquid";
+import { Flavor, DatabaseFlavor} from "./flavor";
+import { Liquid, DatabaseLiquid, Result } from "./liquid";
 import { Battery, id } from "./battery";
 import Comment from "./comment";
 import { Post } from "./post";
@@ -30,6 +30,9 @@ import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
 export {
   wireGenerator,
   Coil,
+  DatabaseCoil,
+  DatabaseLiquid,
+  DatabaseFlavor,
   Properties,
   Wire,
   WireStyle,
