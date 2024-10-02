@@ -21,7 +21,7 @@ import { User, DatabaseUser, Ban, UserPermission } from "./user";
 import { Photo } from "./photo";
 import { Flavor, DatabaseFlavor} from "./flavor";
 import { Liquid, DatabaseLiquid, Result } from "./liquid";
-import { Battery, id } from "./battery";
+import { Battery, CompanyName, AffiliationLink } from "./battery";
 import Comment from "./comment";
 import { Post } from "./post";
 import { Link } from "./link";
@@ -57,7 +57,8 @@ export {
   Liquid,
   Result,
   Battery,
-  id,
+  CompanyName, 
+  AffiliationLink,
   Comment,
   Post,
   Link,

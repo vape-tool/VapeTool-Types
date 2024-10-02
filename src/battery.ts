@@ -1,3 +1,6 @@
+export type CompanyName = string;
+export type AffiliationLink = string;
+
 export class Battery {
   constructor(
     readonly brand: string,
@@ -12,13 +15,13 @@ export class Battery {
     readonly reviewUrl: string,
     readonly imageWidth: number,
     readonly imageHeight: number,
-    readonly affiliate: Map<string, string> | null // Provider name -> link
-  ) {}
-}
+    readonly affiliate: Map<CompanyName, AffiliationLink> | null
+  ) { }
 
-export function id(battery: Battery): string {
-  return `${battery.brand}_${battery.model}_${battery.chemistry}_${battery.size}_${battery.capacity}`.replace(
-    new RegExp("[^A-Za-z0-9_]+"),
-    "_"
-  );
+  static id(battery: Battery): string {
+    return `${battery.brand}_${battery.model}_${battery.chemistry}_${battery.size}_${battery.capacity}`.replace(
+      new RegExp("[^A-Za-z0-9_]+"),
+      "_"
+    );
+  }
 }
