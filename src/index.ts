@@ -17,7 +17,7 @@ import {
   isCloudyValid
 } from "./cloud";
 import * as wireGenerator from "./wireGenerator";
-import { User, Ban, UserPermission } from "./user";
+import { User, DatabaseUser, Ban, UserPermission } from "./user";
 import { Photo } from "./photo";
 import { Flavor, DatabaseFlavor} from "./flavor";
 import { Liquid, DatabaseLiquid, Result } from "./liquid";
@@ -26,6 +26,7 @@ import Comment from "./comment";
 import { Post } from "./post";
 import { Link } from "./link";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
+import { Accent, Theme } from "./theme";
 
 export {
   wireGenerator,
@@ -48,6 +49,7 @@ export {
   isCloudyValid,
   isComplex,
   User,
+  DatabaseUser,
   Ban,
   UserPermission,
   Photo,
@@ -63,4 +65,6 @@ export {
   MixableType,
   MixResult,
   MixableResult,
+  Accent,
+  Theme
 };

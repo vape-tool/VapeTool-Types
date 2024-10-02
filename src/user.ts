@@ -1,4 +1,6 @@
-export class User {
+import { Accent, Theme } from "./theme";
+
+export class DatabaseUser {
   constructor(
     readonly uid: string,
     readonly display_name: string,
@@ -14,6 +16,37 @@ export class User {
     readonly stripeCancelAtEndPeriod: boolean | null
   ) {}
 }
+
+export type User = {
+  id: string;
+  username: string;
+  name: string;
+
+  // From @vapetool/types
+  email: string | null;
+  permission: UserPermission;
+  androidLifetimePro: boolean; // just pro in @vapetool/types
+  androidSetup: boolean;
+  ban: Ban | null;
+
+  // payments
+  stripeSubscription: Date | null;
+  stripeCancelAtEndPeriod: boolean | null;
+  webLifetimePro: boolean | null;
+
+  bio: string | null;
+  theme: Theme | null;
+  accent: Accent | null;
+  photoURL: string | null;
+  following: string[];
+  followers: string[];
+  createdAt: object;
+  updatedAt: object | null;
+  totalPosts: number;
+  totalPhotos: number;
+  pinnedPost: string | null;
+  coverPhotoURL: string | null;
+};
 
 export interface Ban {
   reason: string;
