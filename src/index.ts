@@ -27,6 +27,7 @@ import { ImageData, ImagesPreview, Post } from "./post";
 import { Link } from "./link";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
 import { Accent, Theme } from "./theme";
+import { Stats } from "./firestore";
 
 export {
   wireGenerator,
@@ -50,6 +51,7 @@ export {
   isComplex,
   User,
   DatabaseUser,
+  Stats,
   Ban,
   UserPermission,
   Photo,

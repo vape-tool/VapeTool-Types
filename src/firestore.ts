@@ -96,3 +96,9 @@ export class Timestamp {
     );
   }
 }
+
+export type Stats = {
+  likes: string[];
+  reposts: string[];
+  updatedAt: Timestamp | null;
+};
