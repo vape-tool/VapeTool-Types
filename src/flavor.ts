@@ -1,5 +1,6 @@
 import uuid from './uuid';
 import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable} from "./index";
+import { Timestamp } from './firestore';
 
 
 export interface DatabaseFlavor extends Storeable {
@@ -23,8 +24,8 @@ export class Flavor {
     id: string;
 
     createdBy: string;
-    createdAt: object;
-    updatedAt: object | null;
+    createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
+    updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
 
     status: OnlineStatus;
 
@@ -39,7 +40,7 @@ export class Flavor {
         {
             id = uuid(), 
             createdBy = LOCAL_AUTHOR.uid,
-            createdAt = new Date(),
+            createdAt = Timestamp.now(),
             updatedAt = null,
             status = OnlineStatus.ONLINE_PRIVATE,
             name = '',
@@ -51,8 +52,8 @@ export class Flavor {
         }: {
             id?: string,
             createdBy?: string;
-            createdAt?: object;
-            updatedAt?: object | null;
+            createdAt?: Timestamp;
+            updatedAt?: Timestamp | null;
             status?: OnlineStatus, 
             name?: string, manufacturer?: string, percentage?: number, ratio?: number,
             price?: number, amount?: number

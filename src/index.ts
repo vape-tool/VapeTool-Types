@@ -23,7 +23,7 @@ import { Flavor, DatabaseFlavor} from "./flavor";
 import { Liquid, DatabaseLiquid, Result } from "./liquid";
 import { Battery, CompanyName, AffiliationLink } from "./battery";
 import Comment from "./comment";
-import { Post } from "./post";
+import { ImageData, ImagesPreview, Post } from "./post";
 import { Link } from "./link";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
 import { Accent, Theme } from "./theme";
@@ -61,6 +61,8 @@ export {
   AffiliationLink,
   Comment,
   Post,
+  ImagesPreview,
+  ImageData,
   Link,
   Mixable, 
   MixableType,

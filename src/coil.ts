@@ -7,6 +7,7 @@ import {
   Wire,
   WireType
 } from "./index";
+import { Timestamp } from "./firestore";
 
 export interface DatabaseCoil extends Storeable {
   uid: string;
@@ -36,8 +37,8 @@ export class Coil {
   name: string;
   description: string;
   createdBy: string;
-  createdAt: object;
-  updatedAt: object | null;
+  createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
+  updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   status: OnlineStatus;
   type: WireType;
   setup: number;
@@ -57,7 +58,7 @@ export class Coil {
     name = "",
     description = "",
     createdBy = LOCAL_AUTHOR.uid,
-    createdAt = new Date(),
+    createdAt = Timestamp.now(),
     updatedAt = null,
     status = OnlineStatus.ONLINE_PRIVATE,
     type = WireType.NORMAL,
@@ -78,8 +79,8 @@ export class Coil {
     description?: string;
 
     createdBy?: string;
-    createdAt?: object;
-    updatedAt?: object | null;
+    createdAt?: Timestamp;
+    updatedAt?: Timestamp | null;
 
     status?: OnlineStatus;
     type?: WireType;

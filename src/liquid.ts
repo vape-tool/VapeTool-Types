@@ -1,3 +1,4 @@
+import { Timestamp } from "./firestore";
 import { Author, DatabaseFlavor, Flavor, LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
 import uuid from "./uuid";
 
@@ -24,9 +25,9 @@ export class Liquid {
   name: string;
   description: string;
 
-  createdBy: string;
-  createdAt: object;
-  updatedAt: object | null;
+  createdBy: string; // User ID
+  createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
+  updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
 
   status: OnlineStatus;
 
@@ -44,7 +45,7 @@ export class Liquid {
     name = "",
     description = "",
     createdBy = LOCAL_AUTHOR.uid,
-    createdAt = new Date(),
+    createdAt = Timestamp.now(),
     updatedAt = null,
     status = OnlineStatus.ONLINE_PRIVATE,
 
@@ -62,8 +63,8 @@ export class Liquid {
     description?: string;
 
     createdBy?: string;
-    createdAt?: object;
-    updatedAt?: object | null;
+    createdAt?: Timestamp;
+    updatedAt?: Timestamp | null;
 
     status?: OnlineStatus;
 

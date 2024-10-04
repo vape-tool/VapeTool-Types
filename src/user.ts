@@ -1,3 +1,4 @@
+import { Timestamp } from "./firestore";
 import { Accent, Theme } from "./theme";
 
 export class DatabaseUser {
@@ -40,8 +41,8 @@ export type User = {
   photoURL: string | null;
   following: string[];
   followers: string[];
-  createdAt: object;
-  updatedAt: object | null;
+  createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
+  updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   totalPosts: number;
   totalPhotos: number;
   pinnedPost: string | null;
