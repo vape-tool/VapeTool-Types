@@ -1,5 +1,5 @@
 import { Timestamp } from "./firestore";
-import { Author, DatabaseFlavor,  LiquidFlavor,  LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
+import { Author, LiquidFlavor,  LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
 import uuid from "./uuid";
 
 export interface DatabaseLiquid extends Storeable {
@@ -17,7 +17,7 @@ export interface DatabaseLiquid extends Storeable {
   targetRatio: number;
   amount: number;
   rating: number;
-  flavors: DatabaseFlavor[];
+  flavors: LiquidFlavor[];
 }
 
 export class Liquid {
