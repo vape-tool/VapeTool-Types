@@ -19,7 +19,7 @@ import {
 import * as wireGenerator from "./wireGenerator";
 import { User, DatabaseUser, Ban, UserPermission } from "./user";
 import { Photo } from "./photo";
-import { Flavor, DatabaseFlavor} from "./flavor";
+import { FlavorTemplate, LiquidFlavor, DatabaseFlavor} from "./flavor";
 import { Liquid, DatabaseLiquid, Result } from "./liquid";
 import { Battery, CompanyName, AffiliationLink } from "./battery";
 import Comment from "./comment";
@@ -55,7 +55,8 @@ export {
   Ban,
   UserPermission,
   Photo,
-  Flavor,
+  FlavorTemplate,
+  LiquidFlavor,
   Liquid,
   Result,
   Battery,

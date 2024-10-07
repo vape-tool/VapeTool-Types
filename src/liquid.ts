@@ -1,5 +1,5 @@
 import { Timestamp } from "./firestore";
-import { Author, DatabaseFlavor, Flavor, LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
+import { Author, DatabaseFlavor,  LiquidFlavor,  LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
 import uuid from "./uuid";
 
 export interface DatabaseLiquid extends Storeable {
@@ -38,7 +38,7 @@ export class Liquid {
   targetRatio: number;
   amount: number;
   rating: number;
-  flavors: Flavor[];
+  flavors: LiquidFlavor[];
 
   constructor({
     id = uuid(),
@@ -75,7 +75,7 @@ export class Liquid {
     targetRatio?: number;
     amount?: number;
     rating?: number;
-    flavors?: Flavor[];
+    flavors?: LiquidFlavor[];
   } = {}) {
     this.id = id;
     this.name = name;

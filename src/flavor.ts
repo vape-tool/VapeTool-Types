@@ -20,7 +20,7 @@ export interface DatabaseFlavor extends Storeable {
     amount: number;
   }
 
-export class Flavor {
+export class FlavorTemplate {
     id: string;
 
     createdBy: string;
@@ -31,10 +31,8 @@ export class Flavor {
 
     name: string;
     manufacturer: string;
-    percentage: number;
     ratio: number; //PG ratio
     price: number;
-    amount: number;
 
     constructor(
         {
@@ -45,18 +43,17 @@ export class Flavor {
             status = OnlineStatus.ONLINE_PRIVATE,
             name = '',
             manufacturer = '', 
-            percentage = 8,
             ratio = 100,
             price = 0,
-            amount = 10
         }: {
             id?: string,
             createdBy?: string;
             createdAt?: Timestamp;
             updatedAt?: Timestamp | null;
             status?: OnlineStatus, 
-            name?: string, manufacturer?: string, percentage?: number, ratio?: number,
-            price?: number, amount?: number
+            name?: string, manufacturer?: string,
+            ratio?: number,
+            price?: number
         } = {}) {
         this.id = id;
         this.createdBy = createdBy;
@@ -65,9 +62,47 @@ export class Flavor {
         this.status = status;
         this.name = name;
         this.manufacturer = manufacturer;
-        this.percentage = percentage;
         this.ratio = ratio;
         this.price = price;
-        this.amount = amount;
+    }
+}
+
+
+export class LiquidFlavor {
+    dbId: string | null;
+    name: string;
+    manufacturer: string;
+    percentage: number;
+    ratio: number; // PG ratio
+    price: number;
+
+    constructor(flavor: FlavorTemplate, percentage: number);
+    constructor(name: string, percentage: number, manufacturer: string, ratio: number, price: number);
+
+    constructor(
+        flavorOrName: FlavorTemplate | string,
+        percentage: number,
+        manufacturer?: string,
+        ratio?: number,
+        price?: number
+    ) {
+        if (typeof flavorOrName === "string") {
+            // Constructor for manual creation
+            this.dbId = null;
+            this.name = flavorOrName;
+            this.percentage = percentage;
+            this.manufacturer = manufacturer!;
+            this.ratio = ratio!;
+            this.price = price!;
+        } else {
+            // Constructor from FlavorTemplate
+            const flavor: FlavorTemplate = flavorOrName;
+            this.dbId = flavor.id;
+            this.name = flavor.name;
+            this.manufacturer = flavor.manufacturer;
+            this.percentage = percentage;
+            this.ratio = flavor.ratio;
+            this.price = flavor.price;
+        }
     }
 }
