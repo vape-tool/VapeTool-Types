@@ -31,6 +31,7 @@ export type Post = {
   images: ImagesPreview | null;
   parent: { id: string; username: string } | null;
   userLikes: string[];
+  likeCount: number; // userLikes.length
   createdBy: string;
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
