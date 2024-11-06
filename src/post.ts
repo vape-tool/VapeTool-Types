@@ -36,6 +36,5 @@ export type Post = {
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   userReplies: number;
-  userReposts: string[];
   status: OnlineStatus;
 };
