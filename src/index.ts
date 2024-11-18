@@ -28,6 +28,7 @@ import { Link } from "./link";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
 import { Accent, Theme } from "./theme";
 import { Stats } from "./firestore";
+import { Notification, NotificationType } from "./notification";
 
 export {
   wireGenerator,
@@ -72,5 +73,7 @@ export {
   MixResult,
   MixableResult,
   Accent,
-  Theme
+  Theme,
+  Notification,
+  NotificationType
 };

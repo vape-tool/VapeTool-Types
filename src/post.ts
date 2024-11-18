@@ -12,7 +12,7 @@ export class DatabasePost implements Storeable {
     readonly lastTimeModified: number | Object,
     readonly status: OnlineStatus,
     readonly reports?: number
-  ) {}
+  ) { }
 }
 
 export type ImageData = {
@@ -29,7 +29,11 @@ export type Post = {
   id: string;
   text: string | null;
   images: ImagesPreview | null;
-  parent: { id: string; username: string } | null;
+  parent: {
+    id: string;
+    username: string,
+    userId?: string
+  } | null;
   userLikes: string[];
   likeCount: number; // userLikes.length
   createdBy: string;
