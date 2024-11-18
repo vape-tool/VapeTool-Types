@@ -18,17 +18,27 @@ export class DatabaseUser {
   ) {}
 }
 
+export type MutedUser = {
+  id: string;
+}
+
+export type Stats = {
+  likes: string[];
+  reposts: string[];
+  updatedAt: Timestamp | null;
+};
+
 export type User = {
   id: string;
   username: string;
   name: string;
 
-  // From @vapetool/types
   email: string | null;
   permission: UserPermission;
   androidLifetimePro: boolean; // just pro in @vapetool/types
   androidSetup: boolean;
   ban: Ban | null;
+  removed?: "deleted" | "paused" // default status = "active"
 
   // payments
   stripeSubscription: Date | null;

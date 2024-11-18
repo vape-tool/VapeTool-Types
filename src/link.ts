@@ -1,5 +1,5 @@
-import { Author, OnlineStatus } from "./index";
-import { Storeable } from "./cloud";
+import { Author } from "./index";
+import { OnlineStatus, Storeable } from "./cloud";
 
 export class Link implements Storeable {
   constructor(

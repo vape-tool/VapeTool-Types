@@ -20,8 +20,10 @@ export interface Storeable {
   author: Author;
   creationTime: number | object; // millis or ServerVariable.TIMESTAMP
   lastTimeModified: number | object; // millis or ServerVariable.TIMESTAMP
-  status: OnlineStatus;
 }
+
+export type Scope = "private" | undefined // default undefined = "all"
+export type AuthorStatus = "deleted" | undefined // default undefined = "active"
 
 export function isCloudyValid(storeable: Storeable): boolean {
   return (

@@ -1,5 +1,5 @@
-import { Author, OnlineStatus } from "./index";
-import { Storeable } from "./cloud";
+import { Author } from "./index";
+import { OnlineStatus, Storeable } from "./cloud";
 import { Timestamp } from "./firestore";
 
 export class DatabasePost implements Storeable {
@@ -40,5 +40,5 @@ export type Post = {
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   userReplies: number;
-  status: OnlineStatus;
+  ownerRemoved?: boolean;
 };

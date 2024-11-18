@@ -1,6 +1,7 @@
 import uuid from './uuid';
-import {Author, LOCAL_AUTHOR, OnlineStatus, Storeable} from "./index";
+import { Author, LOCAL_AUTHOR, Storeable } from "./index";
 import { Timestamp } from './firestore';
+import { OnlineStatus } from './cloud';
 
 
 export interface DatabaseFlavor extends Storeable {
@@ -18,16 +19,17 @@ export interface DatabaseFlavor extends Storeable {
     ratio: number; //PG ratio
     price: number;
     amount: number;
-  }
+}
 
 export class FlavorTemplate {
     id: string;
 
+    scope?: "private"; // default undefined = "all"
+    ownerRemoved?: boolean;
+
     createdBy: string;
     createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
     updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
-
-    status: OnlineStatus;
 
     name: string;
     manufacturer: string;
@@ -36,30 +38,39 @@ export class FlavorTemplate {
 
     constructor(
         {
-            id = uuid(), 
+            id = uuid(),
+
+            scope = undefined,
+            ownerRemoved = undefined,
             createdBy = LOCAL_AUTHOR.uid,
             createdAt = Timestamp.now(),
             updatedAt = null,
             status = OnlineStatus.ONLINE_PRIVATE,
             name = '',
-            manufacturer = '', 
+            manufacturer = '',
             ratio = 100,
             price = 0,
         }: {
             id?: string,
+
+            scope?: "private";
+            ownerRemoved?: boolean;
             createdBy?: string;
             createdAt?: Timestamp;
             updatedAt?: Timestamp | null;
-            status?: OnlineStatus, 
+            status?: OnlineStatus,
             name?: string, manufacturer?: string,
             ratio?: number,
             price?: number
         } = {}) {
         this.id = id;
+            
+        this.ownerRemoved = ownerRemoved;
+        this.scope = scope;
+
         this.createdBy = createdBy;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.status = status;
         this.name = name;
         this.manufacturer = manufacturer;
         this.ratio = ratio;

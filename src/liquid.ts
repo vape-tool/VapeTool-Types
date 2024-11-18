@@ -1,5 +1,6 @@
+import { OnlineStatus, Scope } from "./cloud";
 import { Timestamp } from "./firestore";
-import { Author, LiquidFlavor,  LOCAL_AUTHOR, OnlineStatus, Storeable } from "./index";
+import { Author, LiquidFlavor,  LOCAL_AUTHOR, Storeable } from "./index";
 import uuid from "./uuid";
 
 export interface DatabaseLiquid extends Storeable {
@@ -20,16 +21,18 @@ export interface DatabaseLiquid extends Storeable {
   flavors: LiquidFlavor[];
 }
 
+
 export class Liquid {
   id: string;
   name: string;
   description: string;
 
+  scope?: Scope; // default undefined = "all"
+  ownerRemoved?: boolean;
+
   createdBy: string; // User ID
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
-
-  status: OnlineStatus;
 
   baseStrength: number;
   baseRatio: number; //PG ratio
@@ -47,7 +50,9 @@ export class Liquid {
     createdBy = LOCAL_AUTHOR.uid,
     createdAt = Timestamp.now(),
     updatedAt = null,
-    status = OnlineStatus.ONLINE_PRIVATE,
+
+    scope = undefined,
+    ownerRemoved = undefined,
 
     baseStrength = 36,
     baseRatio = 50,
@@ -66,7 +71,8 @@ export class Liquid {
     createdAt?: Timestamp;
     updatedAt?: Timestamp | null;
 
-    status?: OnlineStatus;
+    scope?: Scope;
+    ownerRemoved?: boolean,
 
     baseStrength?: number;
     baseRatio?: number; //PG ratio
@@ -81,11 +87,13 @@ export class Liquid {
     this.name = name;
     this.description = description;
 
+    this.ownerRemoved = ownerRemoved;
+    this.scope = scope;
+
     this.createdAt = createdAt;
     this.createdBy = createdBy;
     this.updatedAt = updatedAt;
 
-    this.status = status;
     this.baseStrength = baseStrength;
     this.baseRatio = baseRatio;
     this.thinner = thinner;

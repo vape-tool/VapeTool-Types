@@ -2,12 +2,12 @@ import uuid from "./uuid";
 import {
   Author,
   LOCAL_AUTHOR,
-  OnlineStatus,
   Storeable,
   Wire,
   WireType
 } from "./index";
 import { Timestamp } from "./firestore";
+import { OnlineStatus } from "./cloud";
 
 export interface DatabaseCoil extends Storeable {
   uid: string;
@@ -36,10 +36,14 @@ export class Coil {
   id: string;
   name: string;
   description: string;
+
+  scope?: "private"; // default undefined = "all"
+  ownerRemoved?: boolean;
+
   createdBy: string;
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
-  status: OnlineStatus;
+
   type: WireType;
   setup: number;
   wraps: number;
@@ -57,10 +61,14 @@ export class Coil {
     id = uuid(),
     name = "",
     description = "",
+    
+    scope = undefined,
+    ownerRemoved = undefined,
+    
     createdBy = LOCAL_AUTHOR.uid,
     createdAt = Timestamp.now(),
     updatedAt = null,
-    status = OnlineStatus.ONLINE_PRIVATE,
+    
     type = WireType.NORMAL,
     setup = 1,
     wraps = 5.0,
@@ -78,11 +86,13 @@ export class Coil {
     name?: string;
     description?: string;
 
+    scope?: "private";
+    ownerRemoved?: boolean;
+
     createdBy?: string;
     createdAt?: Timestamp;
     updatedAt?: Timestamp | null;
 
-    status?: OnlineStatus;
     type?: WireType;
     setup?: number;
     wraps?: number;
@@ -97,17 +107,22 @@ export class Coil {
     outers?: Wire[];
   } = {}) {
     this.id = id;
-    this.setup = setup;
+
     this.name = name;
     this.description = description;
+        
+    this.ownerRemoved = ownerRemoved;
+    this.scope = scope;
+
+    this.createdBy = createdBy;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
+
+    this.setup = setup;
     this.wraps = wraps;
     this.resistance = resistance;
     this.legsLength = legsLength;
     this.type = type;
-    this.createdBy = createdBy;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
-    this.status = status;
     this.cores = cores;
     this.outers = outers;
     this.innerDiameter = innerDiameter;
