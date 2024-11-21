@@ -7,7 +7,7 @@ import {
   WireType
 } from "./index";
 import { Timestamp } from "./firestore";
-import { OnlineStatus } from "./cloud";
+import { OnlineStatus, Scope } from "./cloud";
 
 export interface DatabaseCoil extends Storeable {
   uid: string;
@@ -37,8 +37,8 @@ export class Coil {
   name: string;
   description: string;
 
-  scope?: "private"; // default undefined = "all"
-  ownerRemoved?: boolean;
+  scope: Scope; // default null = "all"
+  ownerRemoved: boolean | null;
 
   createdBy: string;
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
@@ -62,8 +62,8 @@ export class Coil {
     name = "",
     description = "",
     
-    scope = undefined,
-    ownerRemoved = undefined,
+    scope = null,
+    ownerRemoved = null,
     
     createdBy = LOCAL_AUTHOR.uid,
     createdAt = Timestamp.now(),
@@ -86,8 +86,8 @@ export class Coil {
     name?: string;
     description?: string;
 
-    scope?: "private";
-    ownerRemoved?: boolean;
+    scope?: Scope;
+    ownerRemoved?: boolean | null;
 
     createdBy?: string;
     createdAt?: Timestamp;

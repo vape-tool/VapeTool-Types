@@ -27,8 +27,8 @@ export class Liquid {
   name: string;
   description: string;
 
-  scope?: Scope; // default undefined = "all"
-  ownerRemoved?: boolean;
+  scope: Scope; // default null = "all"
+  ownerRemoved: boolean | null;
 
   createdBy: string; // User ID
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
@@ -51,8 +51,8 @@ export class Liquid {
     createdAt = Timestamp.now(),
     updatedAt = null,
 
-    scope = undefined,
-    ownerRemoved = undefined,
+    scope = null,
+    ownerRemoved = null,
 
     baseStrength = 36,
     baseRatio = 50,
@@ -72,7 +72,7 @@ export class Liquid {
     updatedAt?: Timestamp | null;
 
     scope?: Scope;
-    ownerRemoved?: boolean,
+    ownerRemoved?: boolean | null,
 
     baseStrength?: number;
     baseRatio?: number; //PG ratio

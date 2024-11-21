@@ -13,7 +13,6 @@ import {
   Author,
   LOCAL_AUTHOR,
   Storeable,
-  isCloudyValid
 } from "./cloud";
 import * as wireGenerator from "./wireGenerator";
 import { User, DatabaseUser, Ban, UserPermission, Stats, MutedUser } from "./user";
@@ -23,7 +22,6 @@ import { Liquid, DatabaseLiquid, Result } from "./liquid";
 import { Battery, CompanyName, AffiliationLink } from "./battery";
 import Comment from "./comment";
 import { ImageData, ImagesPreview, Post } from "./post";
-import { Link } from "./link";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
 import { Accent, Theme } from "./theme";
 import { Notification, NotificationType } from "./notification";
@@ -45,7 +43,6 @@ export {
   Author,
   LOCAL_AUTHOR,
   Storeable,
-  isCloudyValid,
   isComplex,
   User,
   DatabaseUser,
@@ -64,7 +61,6 @@ export {
   Post,
   ImagesPreview,
   ImageData,
-  Link,
   Mixable, 
   MixableType,
   MixResult,

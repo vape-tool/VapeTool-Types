@@ -22,13 +22,4 @@ export interface Storeable {
   lastTimeModified: number | object; // millis or ServerVariable.TIMESTAMP
 }
 
-export type Scope = "private" | undefined // default undefined = "all"
-export type AuthorStatus = "deleted" | undefined // default undefined = "active"
-
-export function isCloudyValid(storeable: Storeable): boolean {
-  return (
-    storeable.uid.length > 0 &&
-    storeable.creationTime > 0 &&
-    storeable.lastTimeModified > 0
-  );
-}
+export type Scope = "private" | null // default null = "all"

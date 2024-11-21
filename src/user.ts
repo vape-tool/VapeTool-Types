@@ -38,7 +38,7 @@ export type User = {
   androidLifetimePro: boolean; // just pro in @vapetool/types
   androidSetup: boolean;
   ban: Ban | null;
-  removed?: "deleted" | "paused" // default status = "active"
+  removed: "deleted" | "paused" | null; // default status = "active"
 
   // payments
   stripeSubscription: Date | null;

@@ -32,7 +32,7 @@ export type Post = {
   parent: {
     id: string;
     username: string,
-    userId?: string
+    userId: string | null
   } | null;
   userLikes: string[];
   likeCount: number; // userLikes.length
@@ -40,5 +40,5 @@ export type Post = {
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   userReplies: number;
-  ownerRemoved?: boolean;
+  ownerRemoved: boolean | null;
 };
