@@ -41,7 +41,7 @@ export type User = {
   removed: "deleted" | "paused" | null; // default status = "active"
 
   // payments
-  stripeSubscription: Date | null;
+  stripeSubscription: Timestamp | null;
   stripeCancelAtEndPeriod: boolean | null;
   webLifetimePro: boolean | null;
 
