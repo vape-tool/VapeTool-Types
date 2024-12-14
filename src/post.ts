@@ -20,9 +20,11 @@ export type ImageData = {
   alt: string;
 };
 
-export type ImagesPreview = (ImageData & {
+export type ImagePreview = (ImageData & {
   id: string;
-})[];
+});
+
+export type ImagesPreview = ImagePreview[];
 
 
 export type Post = {
@@ -41,4 +43,10 @@ export type Post = {
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   userReplies: number;
   ownerRemoved: boolean | null;
+  linkPreview?:{
+    title: string;
+    description: string;
+    image: ImagePreview | null;
+    url: string;
+}
 };
