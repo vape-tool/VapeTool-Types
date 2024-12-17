@@ -43,10 +43,10 @@ export type Post = {
   updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
   userReplies: number;
   ownerRemoved: boolean | null;
-  linkPreview?:{
+  linkPreview?: {
     title: string;
     description: string;
-    image: ImagePreview | null;
+    image: string | null;
     url: string;
-}
+  } | null;
 };
