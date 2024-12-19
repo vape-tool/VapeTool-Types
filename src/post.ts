@@ -37,6 +37,7 @@ export type Post = {
     userId: string | null
   } | null;
   userLikes: string[];
+  reports: string[];
   likeCount: number; // userLikes.length
   createdBy: string;
   createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";

@@ -37,24 +37,26 @@ export type User = {
   permission: UserPermission;
   androidLifetimePro: boolean; // just pro in @vapetool/types
   androidSetup: boolean;
+
   ban: Ban | null;
   removed: "deleted" | "paused" | null; // default status = "active"
+  lastTimeReport: Timestamp | null;
+  createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
+  updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
+  totalPosts: number;
+  totalPhotos: number;
 
   // payments
   stripeSubscription: Timestamp | null;
   stripeCancelAtEndPeriod: boolean | null;
   webLifetimePro: boolean | null;
 
+  photoURL: string | null;
   bio: string | null;
   theme: Theme | null;
   accent: Accent | null;
-  photoURL: string | null;
   following: string[];
   followers: string[];
-  createdAt: Timestamp; // import { Timestamp } from "firebase/firestore";
-  updatedAt: Timestamp | null; // import { Timestamp } from "firebase/firestore";
-  totalPosts: number;
-  totalPhotos: number;
   pinnedPost: string | null;
   coverPhotoURL: string | null;
 };
