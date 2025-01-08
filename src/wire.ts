@@ -1,4 +1,4 @@
-import {Materials, Material, Coil} from './index';
+import { Materials, Material, Coil } from './index';
 import uuid from "./uuid";
 
 export enum WireType {
@@ -35,7 +35,7 @@ export enum WireKind {
 }
 
 export function isComplex(wire: Wire | Coil): boolean {
-    return wire.cores.length > 0 || wire.outers.length > 0
+    return (wire.cores && wire.cores.length > 0) || (wire.outers && wire.outers.length > 0);
 }
 
 export class Wire {
@@ -76,12 +76,12 @@ export class Wire {
     outers: Wire[];
 
     constructor({
-                    type = WireType.NORMAL, material = Materials.KANTHAL_A1_AMP, style = WireStyle.CORE,
-                    format = WireFormat.NORMAL, kind = WireKind.ROUND, mm = 0.0, width = 0.0,
-                    height = 0.0, pitch = 0.0, space = 0.0, innerDiameter = 0.0, totalLength = 0.0,
-                    wrapLength = 0.0, widthDiameter = 0.0, heightDiameter = 0.0, resistance = 0.0,
-                    cores = [], outers = []
-                }: {
+        type = WireType.NORMAL, material = Materials.KANTHAL_A1_AMP, style = WireStyle.CORE,
+        format = WireFormat.NORMAL, kind = WireKind.ROUND, mm = 0.0, width = 0.0,
+        height = 0.0, pitch = 0.0, space = 0.0, innerDiameter = 0.0, totalLength = 0.0,
+        wrapLength = 0.0, widthDiameter = 0.0, heightDiameter = 0.0, resistance = 0.0,
+        cores = [], outers = []
+    }: {
         type?: WireType, material?: Material, style?: WireStyle, format?: WireFormat,
         kind?: WireKind, mm?: number, width?: number, height?: number, pitch?: number, space?: number,
         innerDiameter?: number, totalLength?: number, wrapLength?: number, widthDiameter?: number,
