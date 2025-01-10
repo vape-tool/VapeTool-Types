@@ -19,7 +19,7 @@ import { User, DatabaseUser, Ban, UserPermission, Stats, MutedUser } from "./use
 import { Photo } from "./photo";
 import { FlavorTemplate, LiquidFlavor, DatabaseFlavor} from "./flavor";
 import { Liquid, DatabaseLiquid, Result } from "./liquid";
-import { Battery, CompanyName, AffiliationLink } from "./battery";
+import { Battery, batteryId } from "./battery";
 import Comment from "./comment";
 import { ImageData, ImagesPreview, Post } from "./post";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
@@ -55,8 +55,7 @@ export {
   Liquid,
   Result,
   Battery,
-  CompanyName, 
-  AffiliationLink,
+  batteryId,
   Comment,
   Post,
   ImagesPreview,

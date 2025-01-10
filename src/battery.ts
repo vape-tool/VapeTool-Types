@@ -1,27 +1,26 @@
-export type CompanyName = string;
-export type AffiliationLink = string;
+export type Battery = {
+  id: string,
+  brand: string,
+  model: string,
+  size: string,
+  chemistry: string | null,
+  ratedCapacity: number,
+  testedCapacity: number,
+  voltage: number | null,
+  ratedStableCurrent: number,
+  stableCurrent: number,
+  maxVapingCurrent: number,
+  dcInternalResistance: number,
+  cutOff: number | null,
+  reviewUrl: string,
+  imageUrl: string,
+  imageWidth: number,
+  imageHeight: number
+}
 
-export class Battery {
-  constructor(
-    readonly brand: string,
-    readonly model: string,
-    readonly size: string,
-    readonly chemistry: string,
-    readonly capacity: number,
-    readonly voltage: number,
-    readonly stableCurrent: number,
-    readonly maxVapingCurrent: number,
-    readonly cutOff: number,
-    readonly reviewUrl: string,
-    readonly imageWidth: number,
-    readonly imageHeight: number,
-    readonly affiliate: Map<CompanyName, AffiliationLink> | null
-  ) { }
-
-  static id(battery: Battery): string {
-    return `${battery.brand}_${battery.model}_${battery.chemistry}_${battery.size}_${battery.capacity}`.replace(
-      new RegExp("[^A-Za-z0-9_]+"),
-      "_"
-    );
-  }
+export function batteryId(battery: Battery): string {
+  return `${battery.brand.toUpperCase()}_${battery.model.toUpperCase()}_${battery.size}_${battery.ratedCapacity}`.replace(
+    new RegExp("[^A-Za-z0-9]+", "g"),
+    "_"
+  );
 }
