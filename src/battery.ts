@@ -10,7 +10,7 @@ export type Battery = {
   ratedStableCurrent: number,
   stableCurrent: number,
   maxVapingCurrent: number,
-  dcInternalResistance: number,
+  dcInternalResistance: number | null,
   cutOff: number | null,
   reviewUrl: string,
   imageUrl: string,
