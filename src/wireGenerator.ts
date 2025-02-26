@@ -210,6 +210,15 @@ export function fusedClaptonCoil(
     return new Coil({type: WireType.FUSED_CLAPTON, cores, outers: [new Wire({...outer})]});
 }
 
+export function fusedClaptonCoilFrom(
+    wires: Wire[],
+    outers: Wire[] = [normalWireOuter()]
+  ): Coil {
+    const cores = wires.map((wire) => new Wire({ ...wire }));
+    const outerWires = outers.map((wire) => new Wire({ ...wire }));
+    return new Coil({ type: WireType.FUSED_CLAPTON, cores, outers: outerWires });
+  }
+
 /**
  * Alien Clapton
  */
