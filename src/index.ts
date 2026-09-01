@@ -25,6 +25,7 @@ import { ImageData, ImagesPreview, Post } from "./post";
 import { Mixable, MixableType, MixResult, MixableResult } from './mixable'
 import { Accent, Theme } from "./theme";
 import { Notification, NotificationType } from "./notification";
+export * from "./generatedAnalyticsContract";
 
 export {
   wireGenerator,

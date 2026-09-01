@@ -8,7 +8,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "generate:analytics": "node scripts/generate-analytics-contract.mjs",
+    "check:analytics": "node scripts/generate-analytics-contract.mjs --check",
+    "build": "npm run check:analytics && tsc",
     "prepublish": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
