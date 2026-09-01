@@ -1,6 +1,6 @@
 // GENERATED from @vapetool/types contract/analytics-contract.v1.json. DO NOT EDIT.
 export const ANALYTICS_CONTRACT_VERSION = 1 as const;
-export const ANALYTICS_CONTRACT_SHA256 = '69de06f3cf0eca1a86516b90d859b402ec7cad077f067d501369a89037a00b1d' as const;
+export const ANALYTICS_CONTRACT_SHA256 = 'd0f4f9d9136c7f18cbdf0da98419da27194e55ac32f13d8d70976a64e453770c' as const;
 export const ANALYTICS_COMMON_DIMENSIONS = [
   "platform",
   "app_version",
@@ -114,7 +114,8 @@ export const ANALYTICS_ALLOWED_VALUES = {
   "calculator_type": [
     "coil",
     "liquid",
-    "ohm_law"
+    "ohm_law",
+    "battery"
   ],
   "entitlement_state": [
     "free",

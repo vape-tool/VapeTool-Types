@@ -43,7 +43,7 @@
   },
   "allowedValues": {
     "platform": ["web", "android"],
-    "calculator_type": ["coil", "liquid", "ohm_law"],
+    "calculator_type": ["coil", "liquid", "ohm_law", "battery"],
     "entitlement_state": ["free", "pro", "web_pro", "cross_surface", "unknown"],
     "traffic_type": ["production", "development", "test"],
     "tool_segment": ["coil_builder", "liquid_mixer", "multi_tool_maker", "safety_utility_user", "unclassified"],

@@ -3,7 +3,7 @@ package com.stasbar.analytics
 
 object GeneratedAnalyticsContract {
     const val VERSION = 1
-    const val SHA256 = "69de06f3cf0eca1a86516b90d859b402ec7cad077f067d501369a89037a00b1d"
+    const val SHA256 = "d0f4f9d9136c7f18cbdf0da98419da27194e55ac32f13d8d70976a64e453770c"
     data class NumericRange(val minimum: Double, val maximum: Double)
     val COMMON_DIMENSIONS = setOf("platform", "app_version", "source", "campaign", "variant", "medium", "traffic_type", "event_id", "user_pseudo_id", "journey_id", "tool_segment", "entitlement_state", "is_eligible", "commercial_role")
     val EVENT_DIMENSIONS = mapOf(
@@ -43,7 +43,7 @@ object GeneratedAnalyticsContract {
     )
     val ALLOWED_VALUES = mapOf(
         "platform" to setOf("web", "android"),
-        "calculator_type" to setOf("coil", "liquid", "ohm_law"),
+        "calculator_type" to setOf("coil", "liquid", "ohm_law", "battery"),
         "entitlement_state" to setOf("free", "pro", "web_pro", "cross_surface", "unknown"),
         "traffic_type" to setOf("production", "development", "test"),
         "tool_segment" to setOf("coil_builder", "liquid_mixer", "multi_tool_maker", "safety_utility_user", "unclassified"),
