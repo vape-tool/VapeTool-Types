@@ -50,6 +50,8 @@ export type User = {
   stripeSubscription: Timestamp | null;
   stripeCancelAtEndPeriod: boolean | null;
   webLifetimePro: boolean | null;
+  /** Bundle entitlement granted by verified Google Play purchase. Legacy users may not have the field. */
+  crossSurfacePro?: boolean;
 
   photoURL: string | null;
   bio: string | null;
