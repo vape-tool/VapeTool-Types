@@ -1,6 +1,6 @@
 // GENERATED from @vapetool/types contract/analytics-contract.v1.json. DO NOT EDIT.
 export const ANALYTICS_CONTRACT_VERSION = 1 as const;
-export const ANALYTICS_CONTRACT_SHA256 = '7221de209724bf975da202732ce80fef84f563e32c1fe717359a6bebffd864fd' as const;
+export const ANALYTICS_CONTRACT_SHA256 = 'fb129fae61d999d880ac5f9035ef74e24d2e2e5067b10430ea595632a18a7592' as const;
 export const ANALYTICS_COMMON_DIMENSIONS = [
   "platform",
   "app_version",
@@ -79,6 +79,11 @@ export const ANALYTICS_EVENT_DIMENSIONS = {
     "grant_source",
     "product_id"
   ],
+  "web_migration_prompt_viewed": [],
+  "web_migration_started": [],
+  "web_migration_activated": [
+    "activation_type"
+  ],
   "support_requested": [
     "support_channel"
   ],
@@ -149,6 +154,11 @@ export const ANALYTICS_ALLOWED_VALUES = {
   "attribution_status": [
     "attributed",
     "unattributed"
+  ],
+  "activation_type": [
+    "calculation_completed",
+    "item_saved",
+    "community_contribution"
   ]
 } as const;
 export const ANALYTICS_BOOLEAN_DIMENSIONS = [

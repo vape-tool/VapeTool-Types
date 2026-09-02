@@ -3,7 +3,7 @@ package com.stasbar.analytics
 
 object GeneratedAnalyticsContract {
     const val VERSION = 1
-    const val SHA256 = "7221de209724bf975da202732ce80fef84f563e32c1fe717359a6bebffd864fd"
+    const val SHA256 = "fb129fae61d999d880ac5f9035ef74e24d2e2e5067b10430ea595632a18a7592"
     data class NumericRange(val minimum: Double, val maximum: Double)
     val COMMON_DIMENSIONS = setOf("platform", "app_version", "source", "campaign", "variant", "medium", "traffic_type", "event_id", "user_pseudo_id", "journey_id", "tool_segment", "entitlement_state", "is_eligible", "commercial_role")
     val EVENT_DIMENSIONS = mapOf(
@@ -23,6 +23,9 @@ object GeneratedAnalyticsContract {
         "checkout_failed" to setOf("offer_type", "error_code"),
         "purchase_completed" to setOf("offer_type", "amount", "currency", "product_id"),
         "entitlement_granted" to setOf("entitlement", "grant_source", "product_id"),
+        "web_migration_prompt_viewed" to emptySet(),
+        "web_migration_started" to emptySet(),
+        "web_migration_activated" to setOf("activation_type"),
         "support_requested" to setOf("support_channel"),
         "android_pro_activated" to setOf("attribution_status"),
         "research_survey_submitted" to setOf("purpose", "purchase_barrier", "research_volunteer", "community_participant"),
@@ -49,7 +52,8 @@ object GeneratedAnalyticsContract {
         "traffic_type" to setOf("production", "development", "test"),
         "tool_segment" to setOf("coil_builder", "liquid_mixer", "multi_tool_maker", "safety_utility_user", "unclassified"),
         "commercial_role" to setOf("eligible_active_user", "android_purchaser", "web_purchaser", "cross_surface_purchaser", "not_provided"),
-        "attribution_status" to setOf("attributed", "unattributed")
+        "attribution_status" to setOf("attributed", "unattributed"),
+        "activation_type" to setOf("calculation_completed", "item_saved", "community_contribution")
     )
     val BOOLEAN_DIMENSIONS = setOf("is_eligible", "is_discounted", "research_volunteer", "community_participant")
     val BOUNDED_IDENTIFIER_DIMENSIONS = setOf("source", "campaign", "variant", "medium", "offer_type", "price_id", "reason", "error_code", "product_id", "entitlement", "grant_source", "item_type", "community_role", "contribution_type", "support_channel", "purpose", "purchase_barrier", "checkout_failure")

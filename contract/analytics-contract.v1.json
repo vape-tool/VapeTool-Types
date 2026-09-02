@@ -23,6 +23,9 @@
     "checkout_failed": ["offer_type", "error_code"],
     "purchase_completed": ["offer_type", "amount", "currency", "product_id"],
     "entitlement_granted": ["entitlement", "grant_source", "product_id"],
+    "web_migration_prompt_viewed": [],
+    "web_migration_started": [],
+    "web_migration_activated": ["activation_type"],
     "support_requested": ["support_channel"],
     "android_pro_activated": ["attribution_status"],
     "research_survey_submitted": ["purpose", "purchase_barrier", "research_volunteer", "community_participant"],
@@ -49,7 +52,8 @@
     "traffic_type": ["production", "development", "test"],
     "tool_segment": ["coil_builder", "liquid_mixer", "multi_tool_maker", "safety_utility_user", "unclassified"],
     "commercial_role": ["eligible_active_user", "android_purchaser", "web_purchaser", "cross_surface_purchaser", "not_provided"],
-    "attribution_status": ["attributed", "unattributed"]
+    "attribution_status": ["attributed", "unattributed"],
+    "activation_type": ["calculation_completed", "item_saved", "community_contribution"]
   },
   "booleanDimensions": ["is_eligible", "is_discounted", "research_volunteer", "community_participant"],
   "boundedIdentifierDimensions": [
