@@ -1,6 +1,6 @@
 // GENERATED from @vapetool/types contract/analytics-contract.v1.json. DO NOT EDIT.
 export const ANALYTICS_CONTRACT_VERSION = 1 as const;
-export const ANALYTICS_CONTRACT_SHA256 = 'd0f4f9d9136c7f18cbdf0da98419da27194e55ac32f13d8d70976a64e453770c' as const;
+export const ANALYTICS_CONTRACT_SHA256 = '7221de209724bf975da202732ce80fef84f563e32c1fe717359a6bebffd864fd' as const;
 export const ANALYTICS_COMMON_DIMENSIONS = [
   "platform",
   "app_version",
@@ -43,6 +43,9 @@ export const ANALYTICS_EVENT_DIMENSIONS = {
     "amount",
     "currency",
     "is_discounted"
+  ],
+  "offer_clicked": [
+    "offer_type"
   ],
   "offer_dismissed": [
     "offer_type"

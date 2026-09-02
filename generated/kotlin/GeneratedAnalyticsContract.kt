@@ -3,7 +3,7 @@ package com.stasbar.analytics
 
 object GeneratedAnalyticsContract {
     const val VERSION = 1
-    const val SHA256 = "d0f4f9d9136c7f18cbdf0da98419da27194e55ac32f13d8d70976a64e453770c"
+    const val SHA256 = "7221de209724bf975da202732ce80fef84f563e32c1fe717359a6bebffd864fd"
     data class NumericRange(val minimum: Double, val maximum: Double)
     val COMMON_DIMENSIONS = setOf("platform", "app_version", "source", "campaign", "variant", "medium", "traffic_type", "event_id", "user_pseudo_id", "journey_id", "tool_segment", "entitlement_state", "is_eligible", "commercial_role")
     val EVENT_DIMENSIONS = mapOf(
@@ -14,6 +14,7 @@ object GeneratedAnalyticsContract {
         "community_feed_viewed" to setOf("community_role"),
         "community_contribution" to setOf("community_role", "contribution_type"),
         "offer_viewed" to setOf("offer_type", "price_id", "amount", "currency", "is_discounted"),
+        "offer_clicked" to setOf("offer_type"),
         "offer_dismissed" to setOf("offer_type"),
         "offer_disabled" to emptySet(),
         "store_listing_opened" to emptySet(),

@@ -14,6 +14,7 @@
     "community_feed_viewed": ["community_role"],
     "community_contribution": ["community_role", "contribution_type"],
     "offer_viewed": ["offer_type", "price_id", "amount", "currency", "is_discounted"],
+    "offer_clicked": ["offer_type"],
     "offer_dismissed": ["offer_type"],
     "offer_disabled": [],
     "store_listing_opened": [],
